@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/Cairo_University_Crest.png" alt="" height="200" width="200">
+    <img src="images/download (1).jfif" alt="" height="200" width="200" align="right">
+    <h2 align="middle"> <b>Change Department</b> </h2>
+
+    <form action=" " align="left">
+
+        <div>
+            <label>Full Name: </label>
+            <input type="text" name="FullName" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label>ID: </label>
+            <input type="text" name="IDnum" required>
+        </div>
+
+        <br>
+        <label>Current Level: </label>
+        <select>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br><br>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" id="last" name="pass" minlength="6" maxlength="15" required>
+            <br><br>
+
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" maxlength="15" required>
+        </div>
+        <br>
+        <label>New Department: </label>
+        <select>
+            <option value="IS">Information System</option>
+            <option value="CS">Computer Science</option>
+            <option value="AI">Artificial Intelligence</option>
+            <option value="IT">Information Technology</option>
+            <option value="DS">Decision Support</option>
+        </select>
+        <br><br><br>
+
+
+
+
+        <input type="submit" value="Change Department">
+
+    </form>
+
+</body>
+<br><br>
+
+<footer align="center">
+    &copy; all rights are reserved to FCAI
+</footer>
+
+</html>
