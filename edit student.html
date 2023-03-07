@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <title>     student data     </title>
+    </head>
+
+
+    <body class  = "main">
+        
+
+      
+        
+        <img src="kolia.jpg" alt="UNI LOGO" style="float: left;" width="200" height="200">
+
+        <img src="WhatsApp Image 2023-03-05 at 22.16.36.jpg" alt="Faculty Logo" style="float: right ;"width = "200" height="200">
+
+        <header style="text-align: center;">
+            <strong><h1 style="height: 200; width: 200;">Edit Student Data</h1></strong>
+            <small>Data are sensetive</small>
+        </header>
+
+        <br><br><br><br><br><br> <br>
+
+        <main class="personal info">
+            <div >
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" disabled>
+            </div>
+            <hr> 
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" disabled>
+            </div>
+            <hr> 
+            <div>
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male"   disabled>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" disabled>
+                <label for="female">Female</label>
+
+            <hr> 
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+
+            <hr> 
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <hr> 
+        </div>
+
+        <main class="acadimic info">
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email">
+  
+                    <a href = email >
+                           contact him\her
+                    </a>
+            </div>
+            <hr> 
+            <div>
+                <label for="level">College Level:</label>
+                <select id="level" name="level">
+                <option value="1">level1</option>
+                <option value="2">level2</option>
+                <option value="2">level3</option>
+                <option value="4">level4</option>
+                <option value="5">level5</option>
+                <option value="6">level6</option>
+                </select>
+
+            </div>
+            <hr> 
+            <div>
+                <label for="department">Department:</label>
+                <form action="submit.php" method="POST">
+                    <input type="submit" value="go to edit department">
+                    </form>
+            </div>
+            <br><hr>
+            <center>
+                <form action="submit.php" method="POST">
+                <input type="submit" value="Submit">
+                </form>
+                <form action="submit.php" method="POST">
+                <input type="submit" value="Reset">
+                </form>
+            </center>
+            
+              
+        </div>
+        
+        <footer>
+    
+        </footer>
+        
+    </body>
+    
+</html>
