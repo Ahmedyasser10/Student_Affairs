@@ -1,102 +1,109 @@
 <!DOCTYPE html>
 <html>
-    
-    <head> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8"/>
-        <title>     student data     </title>
-    </head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title> student data </title>
+</head>
 
 
-    <body class  = "main">
-        <nav>
-            <ul style="display: flex; list-style: none;">
-                <li style="margin: auto;"><a href="user.html">user</a></li>
-                <li style="margin: auto;"><a href="Add student.html">add student</a></li>
-                <li style="margin: auto;"><a href="delete.html">delete student</a></li>
-                <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
-                <li style="margin: auto;"><a href="table.html">display students</a></li>
-                <li style="margin: auto;"><a href="Search.html">search</a></li>
-            </ul>
-        </nav>
-        <div align="right">
-            <i class="fa-sharp fa-solid fa-bars"></i>
+<body class="main">
+    <img src="images/Cairo_University_Crest.png" alt="" height="200" width="200">
+    <img src="images/download (1).jfif" alt="" height="200" width="200" align="right">
+    <br>
+    <nav>
+        <ul style="display: flex; list-style: none;">
+            <li style="margin: auto;"><a href="user.html">user</a></li>
+            <li style="margin: auto;"><a href="Add student.html">add student</a></li>
+            <li style="margin: auto;"><a href="delete.html">delete student</a></li>
+            <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
+            <li style="margin: auto;"><a href="table.html">display students</a></li>
+            <li style="margin: auto;"><a href="Search.html">search</a></li>
+        </ul>
+    </nav>
+    <div align="right">
+        <i class="fa-sharp fa-solid fa-bars"></i>
+    </div>
+    <header style="text-align: center;">
+        <br><br>
+        <strong>
+            <h1 style="height: 200; width: 200;">Edit Student Data</h1>
+        </strong>
+        <small>Data are sensetive</small>
+    </header>
+
+    <br><br><br><br><br><br> <br>
+
+    <main class="personal info">
+        <div>
+            <label for="ID">ID:</label>
+            <input type="text" id="ID" name="ID" value="momen" placeholder="user name" disabled>
         </div>
-        <header style="text-align: center;">
-            <strong><h1 style="height: 200; width: 200;">Edit Student Data</h1></strong>
-            <small>Data are sensetive</small>
-        </header>
+        <hr>
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" value="10/9/2002" disabled>
+        </div>
+        <hr>
+        <div>
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" disabled>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" disabled>
+            <label for="female">Female</label>
 
-        <br><br><br><br><br><br> <br>
-
-        <main class="personal info">
-            <div >
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" value="momen" placeholder="user name" disabled>
-            </div>
-            <hr> 
-            <div>
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" value="10/9/2002"  disabled>
-            </div>
-            <hr> 
-            <div>
-                <label for="gender">Gender:</label>
-                <input type="radio" id="male" name="gender" value="male"   disabled>
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" disabled>
-                <label for="female">Female</label>
-
-            <hr> 
+            <hr>
             <div>
                 <label for="address">Address:</label>
                 <input type="text" id="address" value=" helwan" name="address">
 
-            <hr> 
-            <div>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" value="0111973886" name="phone">
+                <hr>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" value="0111973886" name="phone">
+                </div>
+                <hr>
             </div>
-            <hr> 
-        </div>
 
-        <main class="acadimic info">
-            <div>
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" value="momenmostafa5@gmail.com" name="email">
-  
-                    <a href = email >
-                           contact him\her
+            <main class="acadimic info">
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" value="momenmostafa5@gmail.com" name="email">
+
+                    <a href=email>
+                        contact him\her
                     </a>
-            </div>
-            <hr> 
-            <div>
-                <label for="level">College Level:</label>
-                <select id="level" name="level" value ="1">
-                <option value="1">level1</option>
-                <option value="2">level2</option>
-                <option value="2">level3</option>
-                <option value="4">level4</option>
-                <option value="5">level5</option>
-                <option value="6">level6</option>
-                </select>
+                </div>
+                <hr>
+                <div>
+                    <label for="level">Level:</label>
+                    <select id="level" name="level" value="1">
+                        <option value="1">level 1</option>
+                        <option value="2">level 2</option>
+                        <option value="2">level 3</option>
+                        <option value="4">level 4</option>
 
-            </div>            
-            <hr><br>
-            <center>
-                <form action="edit student.html" method="POST">
-                <input type="submit" value="Submit">
-                </form>
-               
-            </center>
-            
-              
+                    </select>
+
+                </div>
+                <hr><br>
+                <center>
+                    <form action="edit student.html" method="POST">
+                        <input type="submit" value="Submit">
+                    </form>
+
+                </center>
+
+
         </div>
-        
-        <footer>
-    
+
+        <br><br><br>
+
+        <footer align="center">
+            &copy; all rights are reserved to FCAI
         </footer>
-        
-    </body>
-    
+
+</body>
+
 </html>
