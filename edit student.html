@@ -9,14 +9,19 @@
 
 
     <body class  = "main">
-        
-
-      
-        
-        <img src="kolia.jpg" alt="UNI LOGO" style="float: left;" width="200" height="200">
-
-        <img src="WhatsApp Image 2023-03-05 at 22.16.36.jpg" alt="Faculty Logo" style="float: right ;"width = "200" height="200">
-
+        <nav>
+            <ul style="display: flex; list-style: none;">
+                <li style="margin: auto;"><a href="user.html">user</a></li>
+                <li style="margin: auto;"><a href="Add student.html">add student</a></li>
+                <li style="margin: auto;"><a href="delete.html">delete student</a></li>
+                <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
+                <li style="margin: auto;"><a href="table.html">display students</a></li>
+                <li style="margin: auto;"><a href="Search.html">search</a></li>
+            </ul>
+        </nav>
+        <div align="right">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+        </div>
         <header style="text-align: center;">
             <strong><h1 style="height: 200; width: 200;">Edit Student Data</h1></strong>
             <small>Data are sensetive</small>
@@ -27,12 +32,12 @@
         <main class="personal info">
             <div >
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" disabled>
+                <input type="text" id="username" name="username" value="momen" placeholder="user name" disabled>
             </div>
             <hr> 
             <div>
                 <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" disabled>
+                <input type="date" id="dob" name="dob" value="10/9/2002"  disabled>
             </div>
             <hr> 
             <div>
@@ -45,12 +50,12 @@
             <hr> 
             <div>
                 <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
+                <input type="text" id="address" value=" helwan" name="address">
 
             <hr> 
             <div>
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" value="0111973886" name="phone">
             </div>
             <hr> 
         </div>
@@ -58,7 +63,7 @@
         <main class="acadimic info">
             <div>
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" value="momenmostafa5@gmail.com" name="email">
   
                     <a href = email >
                            contact him\her
@@ -67,7 +72,7 @@
             <hr> 
             <div>
                 <label for="level">College Level:</label>
-                <select id="level" name="level">
+                <select id="level" name="level" value ="1">
                 <option value="1">level1</option>
                 <option value="2">level2</option>
                 <option value="2">level3</option>
@@ -76,22 +81,13 @@
                 <option value="6">level6</option>
                 </select>
 
-            </div>
-            <hr> 
-            <div>
-                <label for="department">Department:</label>
-                <form action="submit.php" method="POST">
-                    <input type="submit" value="go to edit department">
-                    </form>
-            </div>
-            <br><hr>
+            </div>            
+            <hr><br>
             <center>
-                <form action="submit.php" method="POST">
+                <form action="edit student.html" method="POST">
                 <input type="submit" value="Submit">
                 </form>
-                <form action="submit.php" method="POST">
-                <input type="submit" value="Reset">
-                </form>
+               
             </center>
             
               
