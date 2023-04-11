@@ -4,54 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Home page">
-    <title>Sign in </title>
-
+    <title>Students Affairs Login </title>
+    <script defer src="login.js"></script>
+    
 </head>
 
 <body>
-    <h1 align="middle">FCAI ترحب بكم</h1>
+    <h1 align="middle">Welcome to FCAI-CU</h1>
     <img src="images/Cairo_University_Crest.png" alt="" height="200" width="200">
-    <img src="images/download (1).jfif" alt="" height="200" width="200" align="right">
+    <img src="images/faculty logo.png" alt="" height="200" width="200" align="right">
+
     <form align="middle" action="navpage v2.html" >
 
         <div>
-            <label for="us">Username</label>
-            <input id="us" type="text" placeholder="Username" name="Username" minlength="3" maxlength="15" required
-                autofocus>
+            <input id="username" type="text" placeholder="Username" name="Username" >
         </div>
-        <br />
+        <small id="usererrorMessage" hidden>Username is required</small>
+        <br>
         <div>
-            <label for="pass">Password</label>
-            <input id="pass" type="password" name="Password" required placeholder="minimum 6 character">
+            <input id="password" type="password" name="Password"  placeholder="Password">
         </div>
-        <br />
-        <div>
-            <input type="checkbox" id="check">
-            <label for="check"> Stay Signed in </label>
-        </div>
-        <br />
+        <small id="pass1errorMessage" hidden>Password should be at least 8 characters</small>
+        <small id="pass2errorMessage" hidden>Password shouldn't be more than 15 characters</small>
+        <br/>
         <div>
             <input type="submit" value="Login">
         </div>
-
-    </form>
-    <br />
-    <form align="middle" action="SignUp.html">
-        <div>
-            <input type="submit" value="Sign up">
-        </div>
-        <!-- <a href="SignUp.html" target="_blank">forget password</a> -->
-    </form>
-
-    <br />
-
-
+<br/>
+<div>You don't have an account? <a href="SignUp.html">Sign up</a></div>
 
 </body>
 <br><br>
-
 <footer align="center">
-    &copy; all rights are reserved to FCAI
+    &copy; all rights are reserved to FCAI-CU
 </footer>
 
 </html>
