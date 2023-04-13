@@ -4,67 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Home page">
-    <title> Sign Up </title>
-
+    <title> Students Affairs Sign Up </title>
+   
 </head>
 
 <body>
     <img src="images/Cairo_University_Crest.png" alt="" height="200" width="200">
-    <img src="images/download (1).jfif" alt="" height="200" width="200" align="right">
-    <form action="Home.html" align="middle">
-        <div>
-            <label for="un">Username</label>
-            <input type="text" name="Username" id="un" required>
-        </div>
-        <br />
-        <div>
-            <label for="first">first name</label>
-            <input type="text" name="first name" id="first" placeholder="first name" name="first name" required min="3"
-                max="15">
-        </div>
+    <img src="images/faculty logo.png" alt="" height="200" width="200" align="right">
 
-        <br />
-        <div>
-            <label for="last">last name</label>
-            <input type="text" name="last name" id="last" placeholder="last name" name="last name" required>
-        </div>
+    <div class="wrapper">
+    <form action="navpage v2.html">
+        <div class="title"> Sign Up</div>
+        <div class="form">
 
-        <br />
-        <div>
-            <label for="pass">Password</label>
-            <input type="password" id="last" name="pass" minlength="6" maxlength="15" required
-                placeholder="minimum 6 character">
-            <br />
-            <br />
-            <label for="confirm">Confirm Password</label>
-            <input type="password" id="confirm" maxlength="15" required>
-        </div>
-        <br />
-        <div>
-            <label>Date of birth</label>
-            <input type="date" name="Date" required>
-        </div>
-        <br />
-        <div>
-            <label>Phone number</label>
-            <input type="text" name="number" required maxlength="11" minlength="11">
-        </div>
-        <br />
-        <div>
-            <label>Gender</label>
-            <input type="radio" name="gender" id="male">
-            <label for="male">Male</label>
+            <div class="input_field">
+                <label for="id">National ID</label>
+                <input type="text" class="input" id="nid">
+            </div>
+            <div class="input_field">
+                <label for="full-name">Full Name</label>
+                <input type="text" class="input" id="fullname">
+            </div>
 
-            <input type="radio" name="gender" id="female">
-            <label for="female">Female</label>
+            <div class="input_field">
+                <label for="un">Username</label>
+                <input type="text" name="Username" id="username" required>
+            </div>
+            
+            <div class="input_field">
+                <label for="pass">Password</label>
+                <input type="password" id="password">
+            </div>
+
+            <div class="input_field"></div>
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirmpass">
+            </div>
+
+            <div class="input_field">
+                <label>Phone number</label>
+                <input type="text" name="number" id="phonenum">  
+            </div>
+
+            <div>
+                <label>Date of birth</label>
+                <input type="date" name="Date" required>
+            </div>
+
+    
+            <div class="inputfield">
+                <input type="submit" value="Sign Up" class="btn" id="submit-btn" action="navpage v2.html">
+            </div>
+
         </div>
-        <br />
-        <input type="submit" value="Sign Up">
-
-
     </form>
+    </div>
+
+    <script src="signup.js"></script>
 </body>
 <br> <br> <br>
 <footer align="center">
-    &copy; all rights are reserved to FCAI
+    &copy; all rights are reserved to FCAI-CU
 </footer>
