@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="Home page">
     <title>Students Affairs Login </title>
-    <script defer src="login.js"></script>
-    
 </head>
 
 <body>
@@ -19,22 +17,23 @@
         <div>
             <input id="username" type="text" placeholder="Username" name="Username" >
         </div>
-        <small id="usererrorMessage" hidden>Username is required</small>
+       
         <br>
         <div>
             <input id="password" type="password" name="Password"  placeholder="Password">
         </div>
-        <small id="pass1errorMessage" hidden>Password should be at least 8 characters</small>
-        <small id="pass2errorMessage" hidden>Password shouldn't be more than 15 characters</small>
+       
         <br/>
         <div>
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" id="login-btn">
         </div>
     </form>
 <br/>
 <div align="center">You don't have an account? <a href="SignUp.html">Sign up</a></div>
 
+<script src="login.js"></script>
 </body>
+
 <br><br>
 <footer align="center">
     &copy; all rights are reserved to FCAI-CU
