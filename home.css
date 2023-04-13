@@ -27,8 +27,8 @@ body, html {
     background-image: url(images/c2966dc8295b40e2d32318aa7b921567.jpg);
     background-size: 100% 100%;
     background-attachment: fixed;
-
-    filter: blur(3px);
+    filter: brightness(50%);
+    
     z-index: -1;
   } 
     
@@ -105,12 +105,15 @@ a{
     margin: 10px;
  }
  #tit{
-    color: white;
+    /* color: white; */
     display: flex;
     height: 62%;
     width: 85%;
     margin: 9px 221px;
     align-items: center;
+    color: #fdfdfe;
+  text-shadow: 0px 0px 5px #420505, 0px 0px 10px #603016, 0px 0px 10px #5d3b17,
+    0px 0px 20px #4b3506;
     
  }
  h1{
@@ -141,32 +144,40 @@ a{
     margin: 100px;
  }
  .link1{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/Student-Services-Su20.jpg);
+    background-image: url(images/Student-Services-Su20.jpg);
     background-position: center;
     background-size: cover;
+    box-shadow:0px 0px 20px 5px #000000;
+    -moz-box-shadow:0px 0px 20px 5px #000000;
+    -webkit-box-shadow:0px 0px 20px 5px #000000;
  }
  .link2{
     
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/2021-01-03-192229996-A-six-step-guide-for-evidence-based-human-resources-spot.jpg);
+    background-image: url(images/human-resources.jpg);
     background-position: center;
     background-size: cover;
-
-
+    box-shadow:0px 0px 20px 5px #171616;
+    -moz-box-shadow:0px 0px 20px 5px #1b1919;
+    -webkit-box-shadow:0px 0px 20px 5px #20201c;
  }
  .link3{
     
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/2Q.png);
+    background-image: url(images/2Q.png);
     
     background-position: center;
     background-size: cover;
-
+    box-shadow:0px 0px 20px 5px #232222;
+    -moz-box-shadow:0px 0px 20px 5px #232222;
+    -webkit-box-shadow:0px 0px 20px 5px #2b2b2a;
 
  }
  .link4{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/th.jpeg);
+    background-image: url(images/th.jpeg);
     background-position: center;
     background-size: cover;
-
+    box-shadow:0px 0px 20px 5px #232222;
+    -moz-box-shadow:0px 0px 20px 5px #232222;
+    -webkit-box-shadow:0px 0px 20px 5px #2b2b2a;
 
  }
  .links:hover{
