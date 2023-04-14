@@ -1,13 +1,12 @@
 .img1{
-    width: 131px;
-    position: relative;
-    left: 68px;
+   height: auto;
+   max-width: 12%;
+   float: left;
 }
 .img2{
-    width: 184px;
-    position: relative;
-    left: 1137px;
-    bottom: -4px;
+   height: auto;
+   max-width: 15%;
+   float: right;
 }
 
 
