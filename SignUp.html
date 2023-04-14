@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta name="description" content="Home page">
     <title> Students Affairs Sign Up </title>
-   
+    <link rel="stylesheet" href="SignUp.css">
 </head>
 
 <body>
-    <img src="images/Cairo_University_Crest.png" alt="" height="200" width="200">
-    <img src="images/faculty logo.png" alt="" height="200" width="200" align="right">
+    <div class = " bg"></div>
+    <img class="img1" src="images/Cairo_University_Crest.png" >
+    <img class="img2" src="images/faculty_logo-removebg-preview.png" alt="">
+    <br><br><br><br><br><br><br><br>
+
 
     <div class="wrapper">
     <form action="navpage v2.html">
         <div class="title"> Sign Up</div>
-        <div class="form">
+        <br><br>
 
+        <div class="form">
             <div class="input_field">
                 <label for="id">National ID</label>
                 <input type="text" class="input" id="nid">
@@ -36,9 +40,9 @@
                 <input type="password" id="password">
             </div>
 
-            <div class="input_field"></div>
+            <div class="input_field">
                 <label for="confirm">Confirm Password</label>
-                <input type="password" id="confirmpass">
+                <input type="password" id="password">
             </div>
 
             <div class="input_field">
@@ -46,23 +50,26 @@
                 <input type="text" name="number" id="phonenum">  
             </div>
 
-            <div>
+            <div class="input_field">
                 <label>Date of birth</label>
                 <input type="date" name="Date" required>
             </div>
-
-    
-            <div class="inputfield">
-                <input type="submit" value="Sign Up" class="btn" id="submit-btn" action="navpage v2.html">
-            </div>
-
+          
         </div>
     </form>
+    <form>
+        <div class="input">
+            <input type="submit" value="Sign Up" class="btn" id="submit-btn" action="navpage v2.html">
     </div>
-
-    <script src="signup.js"></script>
+    </form>
+    </div>
+    
+    <script src="signup.js"></script><div>
+        <button class="but" >contact us  <i class="gg-mail" style="padding: 2%;"></i> </button>
+    </div>
 </body>
 <br> <br> <br>
 <footer align="center">
+    
     &copy; all rights are reserved to FCAI-CU
 </footer>
