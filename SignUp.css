@@ -33,12 +33,20 @@ body {
 
 
 .form{
-    padding: 2%;
-    height: 80%;
+
+    box-shadow: 0px 0px 40px rgb(122, 96, 43);
+    background-color: #f2f2f2;
+    padding: 30px;
+    border-radius: 5px;
+    
 }
 
-.wepper{
-    text-align: center;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .title{
@@ -57,7 +65,7 @@ body {
 .input_field label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #ffffff;
+    color: #000000;
 }
 .input_field input {
     padding: 5px;
@@ -73,21 +81,32 @@ body {
 
 .input{
     height: 33px;
+    width: 10px;
     padding-left: 2.2%;
     size: 3%;
 }
 .input input {
-    border-radius: 6px;
-    width: 200px;
-    height: 100%;
+    border-radius: 33px;
+    width: 214px;
+    height: 101%;
 }
-.input_field input:focus {
+
+.input :hover {
     outline: none;
     box-shadow: 0 0 10px rgb(94, 75, 14);
 }
 
 
-
+footer,
+.wrapper:after {
+  height: 50px;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  height: 25px;
+}
 
 
 .but{
