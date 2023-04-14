@@ -2,42 +2,67 @@
 
 <head>
     <meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/nav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Home page </title>
 </head>
 
 <body>
-    <!-- <img src="images/Cairo_University_Crest.png" alt="" height="200" width="200">
-    <img src="images/download (1).jfif" alt="" height="200" width="200" align="right"> -->
-        <ul style="display: flex; list-style: none;">
-            <img src="images/Cairo_University_Crest.png" alt="" height="100" width="100">
-            <li style="margin: auto;"><a href="user.html">user</a></li>
-            <li style="margin: auto;"><a href="Add student.html">add student</a></li>
-            <li style="margin: auto;"><a href="delete.html">delete student</a></li>
-            <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
-            <li style="margin: auto;"><a href="table.html">display students</a></li>
-            <li style="margin: auto;"><a href="Search.html">search</a></li>
-            <img   src="images/download (1).jfif" alt="" height="100" width="100">
-            
+    <nav class="nav">
+            <div class="logo"><a href="#"> students affairs</a> </div>
+    <ul >
+            <li ><a href="user.html">user</a></li>
+            <li ><a href="Add student.html">add student</a></li>
+            <li ><a href="delete.html">delete student</a></li>
+            <li ><a href="edit student.html">edit student info</a></li>
+            <li ><a href="table.html">display students</a></li>
+            <li ><a href="Search.html">search</a></li>
         </ul>
-    </nav>
-    <!-- <div align="right">
-        <i class="fa-sharp fa-solid fa-bars"></i>
-    </div> -->
-    <br><br>
-    <div align="middle">
-        <h1>welcome</h1>
-    </div>
+        <a href="#" class="logout">logout</a>
 
+     <div class="btn">
+        <i class="fa-solid fa-bars"></i>
+     </div>   
+    </nav>
+    <div class="head">
+        <h1> welcome to students affairs</h1>
+    </div>
+    <div class="menu">
+        <li ><a href="user.html">user</a></li>
+        <li ><a href="Add student.html">add student</a></li>
+        <li ><a href="delete.html">delete student</a></li>
+        <li ><a href="edit student.html">edit student info</a></li>
+        <li ><a href="table.html">display students</a></li>
+        <li ><a href="Search.html">search</a></li> 
+        <li><a href="#" class="logout">logout</a></li>
+    </div>
+    <script>
+        const btn=document.querySelector(".btn")
+        const icon=document.querySelector(".btn i")
+        const menu=document.querySelector(".menu")
+
+        btn.onclick = function(){
+            menu.classList.toggle("op")
+            const open=menu.classList.contains('op')
+
+            icon.classList=open 
+            ?'fa-solid fa-xmark'
+            :'fa-solid fa-bars'
+        }
+
+    </script>
+    <footer style="position: relative; top: 450px; color: azure;" align="center">
+        &copy; all rights are reserved to FCAI
+    </footer>
 </body>
 <br><br><br><br><br><br><br><br><br>
 
-<footer align="center">
-    &copy; all rights are reserved to FCAI
-</footer>
+
 
 </html>
