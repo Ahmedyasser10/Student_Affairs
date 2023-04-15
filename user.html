@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User info</title>
     <link rel="stylesheet" href="user.css">
+    <script defer src="user.js"></script>
 </head>
 
 <body class="main">
@@ -40,53 +41,40 @@
     <li ><a href="edit student.html">edit student info</a></li>
     <li ><a href="table.html">display students</a></li>
     <li ><a href="Search.html">search</a></li> 
-    <li><a href="#" class="logout">logout</a></li>
+    <li><a href="home.html" class="logout">logout</a></li>
     </div>
-    <script>
-    const btn=document.querySelector(".btn")
-    const icon=document.querySelector(".btn i")
-    const menu=document.querySelector(".menu")
-
-    btn.onclick = function(){
-        menu.classList.toggle("op")
-        const open=menu.classList.contains('op')
-
-        icon.classList=open 
-        ?'fa-solid fa-xmark'
-        :'fa-solid fa-bars'
-    }
-
-    </script>
+  
   
 <body>
   <div class="container">
     <div class="title">User Info</div>
     <div class="content">
-      <form action="#">
+      <form action="navpage v2.html" id="user">
         <div class="user-details">
+
             <div class="input-box">
                 <span class="details">Username</span>
-                <input type="text" placeholder="Enter your username" required>
+                <input type="text" placeholder="Enter your username" id="username">
               </div>
           <div class="input-box">
             <span class="details">first Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" id="fname">
           </div>
           <div class="input-box">
             <span class="details">last name</span>
-            <input type="text" placeholder="Enter your last name" required>
+            <input type="text" placeholder="Enter your last name" id="lname">
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input type="text" placeholder="Enter your number" id="phonenum">
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="password" placeholder="Enter your password" id="password">
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input type="password" placeholder="Confirm your password" id="confirmpass">
           </div>
         </div>
         <div class="gender-details">
@@ -110,7 +98,7 @@
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Register" id="submit-btn">
         </div>
       </form>
     </div>
