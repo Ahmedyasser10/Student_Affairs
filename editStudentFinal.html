@@ -2,105 +2,129 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="edit.css">
     <title> Edit student's data </title>
 </head>
 
-
 <body class="main">
-    <nav>
-        <ul style="display: flex; list-style: none;">
-            <img src="images/Cairo_University_Crest.png" alt="" height="100" width="100">
-            <li style="margin: auto;"><a href="user.html">user</a></li>
-            <li style="margin: auto;"><a href="Add student.html">add student</a></li>
-            <li style="margin: auto;"><a href="delete.html">delete student</a></li>
-            <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
-            <li style="margin: auto;"><a href="table.html">display students</a></li>
-            <li style="margin: auto;"><a href="Search.html">search</a></li>
-            <img   src="images/download (1).jfif" alt="" height="100" width="100">
-            
-        </ul>
-    </nav>
-    <div align="right">
-        <i class="fa-sharp fa-solid fa-bars"></i>
-    </div>
-    <header style="text-align: center;">
-        <br><br>
-        <strong>
-            <h1 style="height: 200; width: 200;">Edit Student's Data</h1>
-        </strong>
-        <small>Data are sensetive</small>
-    </header>
+    
 
+</script>
+<nav class="nav">
+<div class="logo"><a href="#"> students affairs</a> </div>
+<ul >
+<li ><a href="user.html">user</a></li>
+<li ><a href="Add student.html">add student</a></li>
+<li ><a href="delete.html">delete student</a></li>
+<li ><a href="edit student.html">edit student info</a></li>
+<li ><a href="table.html">display students</a></li>
+<li ><a href="Search.html">search</a></li>
+</ul>
+<a href="#" class="logout">logout</a>
+
+<div class="btn">
+<i class="fa-solid fa-bars"></i>
+</div>   
+</nav>
+<div class="menu">
+<li ><a href="user.html">user</a></li>
+<li ><a href="Add student.html">add student</a></li>
+<li ><a href="delete.html">delete student</a></li>
+<li ><a href="edit student.html">edit student info</a></li>
+<li ><a href="table.html">display students</a></li>
+<li ><a href="Search.html">search</a></li> 
+<li><a href="#" class="logout">logout</a></li>
+</div>
+<script>
+const btn=document.querySelector(".btn")
+const icon=document.querySelector(".btn i")
+const menu=document.querySelector(".menu")
+
+btn.onclick = function(){
+menu.classList.toggle("op")
+const open=menu.classList.contains('op')
+
+icon.classList=open 
+?'fa-solid fa-xmark'
+:'fa-solid fa-bars'
+}
+
+</script>
     <br><br><br><br><br><br> <br>
-
-    <form action="" id = "form">
-        <div>
-            <label for="ID">ID:</label>
-            <input type="text" id="ID" name="ID" >
-        </div>
-        <hr>
-        <div>
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" value="10/9/2002" disabled>
-        </div>
-        <hr>
-        <div>
-            <label for="gender">Gender:</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female" >
-            <label for="female">Female</label>
-
-            <hr>
-            <div>
-                <label for="address">Address:</label>
-                <input type="text" id="address"  name="address">
-
-                <hr>
-                <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone"  name="phone">
+    <body>
+        <div class="container">
+          <div class="title">Edit student info</div>
+          <div class="content">
+            <form action="#">
+              <div class="user-details">
+                  <div class="input-box">
+                      <span class="details">ID</span>
+                      <input type="text" placeholder="Enter your ID" required>
+                    </div>
+                <div class="input-box">
+                  <span class="details">name</span>
+                  <input type="text" placeholder="Enter your name" required>
                 </div>
-                <hr>
-            </div>
-
-            <main class="acadimic info">
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input type="text" id="email"  name="email">
-
-                    <a href=email>
-                        contact him\her
-                    </a>
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input type="text" placeholder="Enter your number" required>
                 </div>
-                <hr>
-                <div>
-                    <label for="level">Level:</label>
-                    <select id="level" name="level" value="1">
-                        <option value="1">level 1</option>
-                        <option value="2">level 2</option>
-                        <option value="2">level 3</option>
-                        <option value="4">level 4</option>
-
-                    </select>
-
+                <div class="input-box">
+                    <span class="details">Email address</span>
+                    <input type="text" placeholder="Enter your Email" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Address</span>
+                    <input type="text" placeholder="Enter your Address" required>
+                  </div>
+                  <div class="column" style="display: flex;
+                  column-gap: 15px;
+                  width: 270px;">
+                    <div class="input-box">
+                      <label>level</label>
+                      <input type="number" placeholder="Enter your level" required />
+                    </div>
+                    <div class="input-box">
+                      <label>Birth Date</label>
+                      <input type="date" placeholder="Enter birth date" required />
+                    </div>
+                  </div>
+                  <!-- -->
                 </div>
-                <hr><br>
-            
-                <input type="submit" value="Submit">
-                
-
-
+                <div class="gender-details">
+                  <input type="radio" name="gender" id="dot-1">
+                  <input type="radio" name="gender" id="dot-2">
+                  <input type="radio" name="gender" id="dot-3">
+                  <span class="gender-title">Gender</span>
+                  <div class="category">
+                    <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Male</span>
+                  </label>
+                  <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Female</span>
+                  </label>
+                  <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Prefer not to say</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="button">
+                  <input type="submit" value="Register">
+              </div>
+            </form>
+          </div>
         </div>
-    </form>
-        <br><br><br>
-
-        <footer align="center">
-            &copy; all rights are reserved to FCAI
-        </footer>
-    <script src="main.js"></script>
-</body>
+      
+      </body>
 
 </html>
