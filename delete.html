@@ -4,46 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/del.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Account</title>
+    <title> delete account</title>
 </head>
 
 <body>
    
-    <nav>
-        <ul style="display: flex; list-style: none;">
-            <img src="images/Cairo_University_Crest.png" alt="" height="100" width="100">
-            <li style="margin: auto;"><a href="user.html">user</a></li>
-            <li style="margin: auto;"><a href="Add student.html">add student</a></li>
-            <li style="margin: auto;"><a href="delete.html">delete student</a></li>
-            <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
-            <li style="margin: auto;"><a href="table.html">display students</a></li>
-            <li style="margin: auto;"><a href="Search.html">search</a></li>
-            <img   src="images/download (1).jfif" alt="" height="100" width="100">
-            
-        </ul>
+    <nav class="nav">
+        <div class="logo"><a href="#"> students affairs</a> </div>
+    <ul >
+        <li ><a href="user.html">user</a></li>
+        <li ><a href="Add student.html">add student</a></li>
+        <li ><a href="delete.html">delete student</a></li>
+        <li ><a href="edit student.html">edit student info</a></li>
+        <li ><a href="table.html">display students</a></li>
+        <li ><a href="Search.html">search</a></li>
+    </ul>
+    <a href="#" class="logout">logout</a>
+    
+    <div class="btn">
+    <i class="fa-solid fa-bars"></i>
+    </div>   
     </nav>
-    <div align="right">
-        <i class="fa-sharp fa-solid fa-bars"></i>
+    <div class="menu">
+    <li ><a href="user.html">user</a></li>
+    <li ><a href="Add student.html">add student</a></li>
+    <li ><a href="delete.html">delete student</a></li>
+    <li ><a href="edit student.html">edit student info</a></li>
+    <li ><a href="table.html">display students</a></li>
+    <li ><a href="Search.html">search</a></li> 
+    <li><a href="#" class="logout">logout</a></li>
     </div>
+    <script>
+    const btn=document.querySelector(".btn")
+    const icon=document.querySelector(".btn i")
+    const menu=document.querySelector(".menu")
+    
+    btn.onclick = function(){
+        menu.classList.toggle("op")
+        const open=menu.classList.contains('op')
+    
+        icon.classList=open 
+        ?'fa-solid fa-xmark'
+        :'fa-solid fa-bars'
+    }
+    
+    </script>
+    <h1 class="head1">Delete Student's Account </h1>
     <br>
-    <h2 align="middle"> <b>Delete Student's Account</b> </h2>
-    <br>
-    <form action=" " align="left">
+    <form action=" ">
 
-        <div>
+        <div class="inp">
             <label>Full Name: </label>
             <input type="text" name="FullName" id = "fullname">
         </div>
 
-        <br>
-
-        <div>
+        <div class="inp">
             <label>ID: </label>
             <input type="text" name="IDnum" id = "ID">
         </div>
-
-        <br>
+        <div class="inp">
         <label>Level: </label>
         <select id="select1">
             <option value="1">1</option>
@@ -51,7 +76,9 @@
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
-        <br><br>
+        </div>
+        <br>
+        <div class="inp">
         <label>Department: </label>
         <select id = "select2">
             <option value="General">General</option>
@@ -61,27 +88,27 @@
             <option value="IT">Information Technology</option>
             <option value="DS">Decision Support</option>
         </select>
-        <br><br>
-
-        <div>
-            <label for="pass">Password</label>
-            <input type="password" name="pass" minlength="6" maxlength="15" id = "password">
-            <br><br>
-
-
-            <label for="confirm">Confirm Password</label>
-            <input type="password"  maxlength="15" id = "confirmPassword">
         </div>
         <br>
 
-        <input type="submit" value="Delete account">
+        <div class="inp">
+            <label for="pass">Password</label>
+            <input type="password" name="pass" minlength="6" maxlength="15" id = "password">
+            <br>
+            <label for="confirm">Confirm Password</label>
+            <input type="password"  maxlength="15" id = "confirmPassword">
+        </div>
+        <div class ="submit">       
+             <input type="submit" value="Delete account">
+        </div>
+
 
     </form>
     <script src="delet.js"></script>
 
 </body>
 <br><br>
-<footer align="center">
+<footer>
     &copy; all rights are reserved to FCAI
 </footer>
 
