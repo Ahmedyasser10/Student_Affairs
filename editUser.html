@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title> Edit student's data </title>
+</head>
+
+
+<body class="main">
+    <nav>
+        <ul style="display: flex; list-style: none;">
+            <img src="images/Cairo_University_Crest.png" alt="" height="100" width="100">
+            <li style="margin: auto;"><a href="user.html">user</a></li>
+            <li style="margin: auto;"><a href="Add student.html">add student</a></li>
+            <li style="margin: auto;"><a href="delete.html">delete student</a></li>
+            <li style="margin: auto;"><a href="edit student.html">edit student info</a></li>
+            <li style="margin: auto;"><a href="table.html">display students</a></li>
+            <li style="margin: auto;"><a href="Search.html">search</a></li>
+            <img   src="images/download (1).jfif" alt="" height="100" width="100">
+            
+        </ul>
+    </nav>
+    <div align="right">
+        <i class="fa-sharp fa-solid fa-bars"></i>
+    </div>
+    <header style="text-align: center;">
+        <br><br>
+        <strong>
+            <h1 style="height: 200; width: 200;">Edit Student's Data</h1>
+        </strong>
+        <small>Data are sensetive</small>
+    </header>
+
+    <br><br><br><br><br><br> <br>
+
+    <form action="" id = "form">
+        <div>
+            <label for="ID">ID:</label>
+            <input type="text" id="ID" name="ID" >
+        </div>
+        <hr>
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" value="10/9/2002" disabled>
+        </div>
+        <hr>
+        <div>
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" >
+            <label for="female">Female</label>
+
+            <hr>
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address"  name="address">
+
+                <hr>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone"  name="phone">
+                </div>
+                <hr>
+            </div>
+
+            <main class="acadimic info">
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="text" id="email"  name="email">
+
+                    <a href=email>
+                        contact him\her
+                    </a>
+                </div>
+                <hr>
+                <div>
+                    <label for="level">Level:</label>
+                    <select id="level" name="level" value="1">
+                        <option value="1">level 1</option>
+                        <option value="2">level 2</option>
+                        <option value="2">level 3</option>
+                        <option value="4">level 4</option>
+
+                    </select>
+
+                </div>
+                <hr><br>
+            
+                <input type="submit" value="Submit">
+                
+
+
+        </div>
+    </form>
+        <br><br><br>
+
+        <footer align="center">
+            &copy; all rights are reserved to FCAI
+        </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
