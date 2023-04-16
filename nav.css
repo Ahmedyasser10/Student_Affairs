@@ -108,4 +108,19 @@ ul{
     .menu{
         display: block;
     }
+    .menu a{
+        color: #000;
+    }
+    .menu a:hover{
+        color: orange;
+    }
 }
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    color: azure;
+  }

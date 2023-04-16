@@ -43,6 +43,7 @@ ul{
     top: 100px;
     height: 0px;
     width: 200px;
+    z-index: 2;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     overflow: hidden;
@@ -70,6 +71,37 @@ ul{
     cursor: pointer;
     transition: scale 0.2 ease ;
 }
+.logout:hover{
+  scale: 1.05;
+  color: #fff;
+}
+.logout:active{
+  scale: 0.95;
+}
+
+.menu .logout{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 1050px ){
+  ul,.nav .logout{
+      display: none;
+  }
+  .nav .btn{
+      display: block;
+  }
+  .menu{
+      display: block;
+  }
+  .menu a{color: black;}
+  .menu a:hover{
+    color: orange;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -87,18 +119,19 @@ body{
     background-size: 400% 400%;
 }
 .container{
-    margin: 150px 455px;
+  margin: 140px 380px;
   max-width: 750px;
-    height: 900px;
+  height: 500px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   /* margin-top: 154px; */
-  justify-content: center; 
-   align-items: center;
-   position: fixed;
+  justify-content: center;
+  z-index: 1;
+  align-items: center;
+  position: absolute;
 }
 .container .title{
   font-size: 25px;
@@ -222,12 +255,12 @@ form .user-details .input-box{
  @media(max-width: 459px){
  .container .content .category{
    flex-direction: column;
- }
+ }}
  footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 50px;
+  width: 99%;
+  height: 25px;
   display: flex;
   justify-content: center;
   color: azure;

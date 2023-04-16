@@ -49,6 +49,7 @@ ul{
   right: 2rem;
   top: 100px;
   height: 0px;
+  z-index: 2;
   width: 200px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
@@ -77,6 +78,36 @@ ul{
   cursor: pointer;
   transition: scale 0.2 ease ;
 }
+.logout:hover{
+  scale: 1.05;
+  color: #fff;
+}
+.logout:active{
+  scale: 0.95;
+}
+
+.menu .logout{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 1050px ){
+  ul,.nav .logout{
+      display: none;
+  }
+  .nav .btn{
+      display: block;
+  }
+  .menu{
+      display: block;
+  }
+  .menu a{color: black;}
+  .menu a:hover{
+    color: orange;
+  }
+}
 body{
   justify-content: center; 
    align-items: center;
@@ -95,13 +126,14 @@ td image {
 main.table {
   margin-top: 82px;
   width: 82vw;
-  height: 90vh;
+  z-index: 1;
+  height: 77vh;
   background-color: rgba(237, 209, 209, 0.777);
   backdrop-filter: blur(7px);
   box-shadow: 0 0.4rem 0.8rem #0005;
   border-radius: 0.8rem;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   
 }
 .table__header {
@@ -259,4 +291,13 @@ thead th.active span.icon-arrow{
 
 thead th.active,tbody td.active {
   color: #bd5e00;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  color: azure;
 }
