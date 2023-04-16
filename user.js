@@ -14,7 +14,7 @@ const genderRadios = document.querySelectorAll('input[type="radio"][name="gender
 const submitBtn = document.querySelector('#submit-btn');
 
 // Retrieve the form data from local storage and pre-populate the form fields
-const storedData = JSON.parse(localStorage.getItem('formData'));
+const storedData = JSON.parse(localStorage.getItem('userData'));
 if (storedData) {
   firstname.value = storedData['First Name'];
   lastname.value = storedData['Last Name'];
@@ -89,17 +89,18 @@ submitBtn.addEventListener('click', function (event) {
     return false;
   }
 
-  const formData = {
+  const userData = {
+    
     'First Name': firstname.value,
     'Last Name': lastname.value,
     'username': username.value,
     'Password': password.value,
     'confrimpass': confirmpass.value,
     'phone': phonenum.value,
-    'gender':genderRadios.value
+    'gender':genderRadios.value,
   };
-  localStorage.setItem('formData',JSON.stringify(formData)); 
-  console.log(formData);
+  localStorage.setItem('userData',JSON.stringify(userData)); 
+  console.log(userData);
   console.log("Success");
   
   window.location.replace(
