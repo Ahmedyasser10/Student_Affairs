@@ -3,31 +3,58 @@ const form = document.getElementById('user');
 
 // Get the input fields
 const firstname = document.querySelector('#fname');
-const lastname = document.querySelector('#lname');
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
 const confirmpass = document.querySelector('#confirmpass');
 const phonenum = document.querySelector('#phonenum');
 const genderRadios = document.querySelectorAll('input[type="radio"][name="gender"]');
+const logOut = document.querySelector("#LogOut") ;
+
 
 // Get the submit button
 const submitBtn = document.querySelector('#submit-btn');
 
 // Retrieve the form data from local storage and pre-populate the form fields
-const storedData = JSON.parse(localStorage.getItem('userData'));
-if (storedData) {
-  firstname.value = storedData['First Name'];
-  lastname.value = storedData['Last Name'];
-  username.value = storedData['username'];
-  password.value = storedData['Password'];
-  confirmpass.value = storedData['confrimpass'];
-  phonenum.value = storedData['phone'];
-  const selectedGender = storedData['gender'];
-  genderRadios.forEach(radio => {
-    if (radio.value === selectedGender) {
-      radio.checked = true;
-    }
-  });
+  
+
+
+
+
+
+class User {
+  constructor( fullname , username , password , id  , phonenumber  , date , type ) {
+    this.username = username ;
+    this.password = password ; 
+    this.fullname = fullname ;
+    this.phonenumber = phonenumber ;
+    this.date = date ;
+    this.logedin = 0 ;
+    this.type = type ;
+    this.id = id ;
+  }
+}
+
+let curUser  = new User() ;
+
+window.onload = function(){
+  for( i = 0 ;i<localStorage.length ; i++){
+    let k = localStorage.key(i) ;
+    if (JSON.parse(localStorage.getItem(k)).type === 0 )
+      continue ;
+   
+        flag  = 1 ;
+        let x = JSON.parse(localStorage.getItem(k)) ;
+        if (x.logedin === 1 ){
+          curUser  = x ;
+          break ;
+        }
+  }
+  firstname.value = curUser.fullname ;
+  username.value = curUser.username ;
+  password.value = curUser.password ;
+  phonenum.value = curUser.phonenumber ;
+  confirmpass.value = curUser.password ;
+ 
 }
 
 // Add an event listener to the submit button
@@ -51,11 +78,7 @@ submitBtn.addEventListener('click', function (event) {
     return false;
   }
 
-  if (lastname.value.trim() === '' || !nameRegex.test(lastname.value)) {
-    alert('Please enter your last name.');
-    lastname.focus();
-    return false;
-  }
+ 
 
   if (phonenum.value.trim() === '' || !numRegex.test(phonenum.value)) {
     alert('Please enter your phone number.');
@@ -89,21 +112,48 @@ submitBtn.addEventListener('click', function (event) {
     return false;
   }
 
-  const userData = {
+  let c = -1 ;
+  for( i = 0 ;i<localStorage.length ; i++){
+    let k = localStorage.key(i) ;
     
-    'First Name': firstname.value,
-    'Last Name': lastname.value,
-    'username': username.value,
-    'Password': password.value,
-    'confrimpass': confirmpass.value,
-    'phone': phonenum.value,
-    'gender':genderRadios.value,
-  };
-  localStorage.setItem('userData',JSON.stringify(userData)); 
-  console.log(userData);
+    if (JSON.parse(localStorage.getItem(k)).type === 0)
+      continue ;
+    
+    if ((JSON.parse(localStorage.getItem(k)).logedin === 1 ))
+      c = k ;
+    if ( JSON.parse(localStorage.getItem(k)).username === username.value   &&  (JSON.parse(localStorage.getItem(k)).logedin === 0 )  ) {
+      alert(" this username is already used") ;
+      return false ;
+    }
+  }
+
+  const user = new User(firstname.value , username.value ,password.value ,curUser.id ,phonenum.value ,curUser.date , 1 ) ;
+
+  user.logedin = 1 ;
+
+  console.log(user);
+  localStorage.setItem( c,JSON.stringify(user)) ; 
   console.log("Success");
   
   window.location.replace(
-    "navpage v2.html"
+    "user.html"
   );
 });
+
+
+logOut.onclick = function(){
+  console.log("hiii");
+  for( i = 0 ;i<localStorage.length ; i++){
+      let k = localStorage.key(i) ;
+      if (JSON.parse(localStorage.getItem(k)).type === 0 )
+           continue ;
+
+      let x = JSON.parse(localStorage.getItem(k)) ;
+      if (x.logedin === 1){
+          x.logedin = 0 ;
+          console.log("hello world");
+          localStorage.setItem(k , JSON.stringify(x)) ;
+          break;
+      }
+  }   
+}
