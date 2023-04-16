@@ -11,20 +11,27 @@ const NationalID = document.querySelector('#nid');
 const date = document.querySelector('input[type="date"]');
 
 
+
+class User {
+  constructor( fullname , username , password , id  , phonenumber  , date , type ) {
+    this.username = username ;
+    this.password = password ; 
+    this.fullname = fullname ;
+    this.phonenumber = phonenumber ;
+    this.date = date ;
+    this.logedin = 0 ;
+    this.type = type ;
+    this.id = id ;
+    
+  }
+}
+
+
+
 // Get the submit button
 const submitBtn = document.querySelector('#submit-btn');
 
-const storedData = JSON.parse(localStorage.getItem('signupData'));
-if (storedData) {
-  fullname.value = storedData['Full Name'];
-  username.value = storedData['username'];
-  password.value = storedData['Password'];
-  confirmpass.value = storedData['confrimpass'];
-  phonenum.value = storedData['phone'];
-  date.value = storedData['DOB'];
-  NationalID.value = storedData['ID'];
-  
-}
+
 
 // Add an event listener to the submit button
 submitBtn.addEventListener('click', function (event) {
@@ -78,21 +85,28 @@ submitBtn.addEventListener('click', function (event) {
     date.focus();
     return false;
   }
+  for( i = 0 ;i<localStorage.length ; i++){
+    let k = localStorage.key(i) ;
+    
+    if (JSON.parse(localStorage.getItem(k)).type === 0)
+      continue ;
+    
+    if (JSON.parse(localStorage.getItem(k)).NationalID === NationalID.value  ) {
+        alert("duplicated NationalID ") ;
+        return false ;
+    }
+    if (JSON.parse(localStorage.getItem(k)).username === username.value  ) {
+      alert(" this username is already used") ;
+      return false ;
+  }
+  }
 
-  const signupData = {
-    'Full Name': fullname.value,
-    'username': username.value,
-    'Password': password.value,
-    'confrimpass': confirmpass.value,
-    'phone': phonenum.value,
-    'DOB': date.value,
-    'ID':NationalID.value,
-  };
-  localStorage.setItem('signupData',JSON.stringify(signupData));  
-  console.log(signupData);
+  const user = new User(fullname.value , username.value ,password.value ,NationalID.value ,phonenum.value ,date.value , 1) ;
+
+  localStorage.setItem( localStorage.length+1,JSON.stringify(user));
   console.log("Success");
   
   window.location.replace(
-  "navpage v2.html"
+    "login.html"
 );
 });
