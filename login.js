@@ -5,7 +5,7 @@ const password = document.querySelector("#password");
 // Get the submit button
 const submitBtn = document.querySelector('#login-btn');
 
-const storedData = JSON.parse(localStorage.getItem('formData'));
+const storedData = JSON.parse(localStorage.getItem('loginData'));
 if (storedData) {
   username.value = storedData['username'];
   password.value = storedData['Password'];
@@ -30,12 +30,15 @@ submitBtn.addEventListener('click', function (event) {
   }
 
 
-const formData = {
+
+const loginData = {
+  
   'username': username.value,
   'Password': password.value,
 };
-  localStorage.setItem('formData',JSON.stringify(formData)); 
-  console.log(formData);
+
+  localStorage.setItem('formData',JSON.stringify(loginData)); 
+  console.log(loginData);
   console.log("Success");
   
   window.location.replace(
