@@ -66,11 +66,11 @@
           <div class="user-details">
             <div class="input-box">
               <span class="details">ID</span>
-              <input type="text" placeholder="Enter student's ID" required>
+              <input type="text" placeholder="Enter student's ID" id="id">
             </div>
             <div class="input-box">
               <span class="details">name</span>
-              <input type="text" placeholder="Enter student's name" required>
+              <input type="text" placeholder="Enter student's name" id="fullname">
             </div>
 
 
@@ -78,7 +78,7 @@
 
             <div class="input-box">
               <label>level</label>
-              <input type="number" placeholder="Enter student's level" required />
+              <input type="number" placeholder="Enter student's level" id="level" />
             </div>
             <div class="input-box">
               <label>department</label>
@@ -91,7 +91,7 @@
                   border: 1px solid #ccc;
                   border-bottom-width: 2px;
                   transition: all 0.3s ease;">
-                <option value="G">General</option>
+                <option value="General">General</option>
                 <option value="IS">Information System</option>
                 <option value="CS">Computer Science</option>
                 <option value="AI">Artificial Intelligence</option>
@@ -103,16 +103,16 @@
           <!-- -->
 
           <div class="button">
-            <input type="submit" value="delete">
+            <input type="submit" value="delete" id="submit-btn">
           </div>
         </form>
       </div>
     </div>
-
+    <script src="delet.js"></script>
   </body>
   </main>
   <footer>
-    &copy; all rights are reserved to FCAI
+    &copy; all rights are reserved to FCAI-CU
   </footer>
 
 </body>
@@ -127,65 +127,3 @@
 
 
 
-
-
-
-
-<!-- //     <h1 class="head1">Delete Student's Account </h1>
-//     <br>
-//     <form action=" ">
-
-//         <div class="inp">
-//             <label>Full Name: </label>
-//             <input type="text" name="FullName" id = "fullname">
-//         </div>
-
-//         <div class="inp">
-//             <label>ID: </label>
-//             <input type="text" name="IDnum" id = "ID">
-//         </div>
-//         <div class="inp">
-//         <label>Level: </label>
-//         <select id="select1">
-//             <option value="1">1</option>
-//             <option value="2">2</option>
-//             <option value="3">3</option>
-//             <option value="4">4</option>
-//         </select>
-//         </div>
-//         <br>
-//         <div class="inp">
-//         <label>Department: </label>
-//         <select id = "select2">
-//             <option value="General">General</option>
-//             <option value="IS">Information System</option>
-//             <option value="CS">Computer Science</option>
-//             <option value="AI">Artificial Intelligence</option>
-//             <option value="IT">Information Technology</option>
-//             <option value="DS">Decision Support</option>
-//         </select>
-//         </div>
-//         <br>
-
-//         <div class="inp">
-//             <label for="pass">Password</label>
-//             <input type="password" name="pass" minlength="6" maxlength="15" id = "password">
-//             <br>
-//             <label for="confirm">Confirm Password</label>
-//             <input type="password"  maxlength="15" id = "confirmPassword">
-//         </div>
-//         <div class ="submit">       
-//              <input type="submit" value="Delete account">
-//         </div>
-
-
-//     </form>
-//     <script src="delet.js"></script>
-
-// </body>
-// <br><br>
-// <footer>
-//     &copy; all rights are reserved to FCAI
-// </footer>
-
-// </html> -->
