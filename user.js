@@ -142,7 +142,6 @@ submitBtn.addEventListener('click', function (event) {
 
 
 logOut.onclick = function () {
-  console.log("hiii");
   for (i = 0; i < localStorage.length; i++) {
     let k = localStorage.key(i);
     if (JSON.parse(localStorage.getItem(k)).type === 0)
@@ -151,7 +150,6 @@ logOut.onclick = function () {
     let x = JSON.parse(localStorage.getItem(k));
     if (x.logedin === 1) {
       x.logedin = 0;
-      console.log("hello world");
       localStorage.setItem(k, JSON.stringify(x));
       break;
     }

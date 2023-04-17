@@ -3,11 +3,13 @@ const studentName = document.getElementById("name");
 const phoneNumber = document.getElementById("number");
 const email = document.getElementById("email");
 const address = document.getElementById("address");
-const level = document.getElementById("level");
-const date = document.getElementById("date");
-const GPA = document.getElementById("GPA");
-const departmentSelect = document.querySelector('select');
-const button = document.getElementById("Register");
+const level = document.getElementById("level") ;
+const date = document.getElementById("date") ;
+const GPA = document.getElementById("GPA") ;
+const departmentSelect = document.querySelector('select') ;
+const button = document.getElementById("Register") ;
+const logOut = document.getElementById("logout") ;
+const logOut2 = document.getElementById("logout2") ;
 
 
 class Student {
@@ -108,3 +110,34 @@ button.addEventListener('click', function (event) {
 
 });
 
+
+logOut.onclick = function () {
+    for (i = 0; i < localStorage.length; i++) {
+      let k = localStorage.key(i);
+      if (JSON.parse(localStorage.getItem(k)).type === 0)
+        continue;
+  
+      let x = JSON.parse(localStorage.getItem(k));
+      if (x.logedin === 1) {
+        x.logedin = 0;
+        localStorage.setItem(k, JSON.stringify(x));
+        break;
+      }
+    }
+  }
+
+logOut2.onclick = function () {
+    for (i = 0; i < localStorage.length; i++) {
+      let k = localStorage.key(i);
+      if (JSON.parse(localStorage.getItem(k)).type === 0)
+        continue;
+  
+      let x = JSON.parse(localStorage.getItem(k));
+      if (x.logedin === 1) {
+        x.logedin = 0;
+        localStorage.setItem(k, JSON.stringify(x));
+        break;
+      }
+    }
+  }
+  

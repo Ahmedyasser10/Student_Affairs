@@ -14,10 +14,10 @@ submitBtn.addEventListener('click', function (event) {
         alert("Invalid ID");
         return false;
     }
-    if (!nameRegex.test(Fullname.value)) {
-        alert("invalid Name");
-        return false;
-    }
+    // if (!nameRegex.test(Fullname.value)) {
+    //     alert("invalid Name");
+    //     return false;
+    // }
     if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
         alert("this student can't be in a depatment");
         return false;
@@ -35,7 +35,7 @@ submitBtn.addEventListener('click', function (event) {
         if (x.type === 1) {
             continue;
         }
-        if (x.id === ID.value && x.name === Fullname.value && x.level === Level.value) {
+        if ( x.id === ID.value && x.name === Fullname.value && x.level === Level.value) {
             flag = true;
             localStorage.removeItem(k);
             break;
