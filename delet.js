@@ -1,50 +1,55 @@
+const Fullname = document.getElementById("fullname");
+const ID = document.getElementById("id");
+const Level = document.getElementById("level");
+const departmentSelect = document.querySelector('select');
+const submitBtn = document.querySelector('#submit-btn');
 
-const fullname = document.querySelector("#fullname");
-const password = document.querySelector("#password");
-const ID = document.querySelector("#ID");
-const confirmPassword = document.querySelector("#confirmPassword");
-const selectElement1 = document.querySelector('#select1');
-const selectElement2 = document.querySelector("#select2");
-
-
-
-document.forms[0].onsubmit = function (event) {
+submitBtn.addEventListener('click', function (event) {
+    event.preventDefault();
 
     let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
     let idRegex = /^\d{8}$/;
 
-    if (!nameRegex.test(fullname.value)) {
+    if (!idRegex.test(ID.value)) {
+        alert("Invalid ID");
+        return false;
+    }
+    if (!nameRegex.test(Fullname.value)) {
         alert("invalid Name");
         return false;
-
     }
-    else if (!idRegex.test(ID.value)) {
-        alert("invalid ID");
+    if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
+        alert("this student can't be in a depatment");
         return false;
 
     }
-    else if (password.value.length < 8) {
-        alert("Password should be at least 8 characters");
-        return false;
-    }
-    else if (!(confirmPassword.value === password.value)) {
-        alert("Password and confirm Password must be the same");
-        return false;
-
-    }
-    else if ((selectElement1.value <= 2) && (selectElement2.value !== "General")) {
-        alert("this student can't have depatment");
-        return false;
-
-    }
-    else if ((selectElement1.value > 2) && (selectElement2.value === "General")) {
+    if ((Level.value > 2) && (departmentSelect.value === "General")) {
         alert("this student must have depatment");
         return false;
     }
-    else
-        return true;
+
+    let flag = false;
+    for (let i = 0; i < localStorage.length; i++) {
+        let k = localStorage.key(i);
+        let x = JSON.parse(localStorage.getItem(k));
+        if (x.type === 1) {
+            continue;
+        }
+        if (x.id === ID.value && x.name === Fullname.value && x.level === Level.value) {
+            flag = true;
+            localStorage.removeItem(k);
+            break;
+        }
+    }
+
+    if (!flag) {
+        console.log("no\n")
+        alert("This student is not found.");
+        return false;
+    }
+    else {
+        alert("student is deleted");
+    }
 
 
-}
-
-
+});
