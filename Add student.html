@@ -78,54 +78,76 @@
               <input type="text" placeholder="Enter student's name" id="name">
             </div>
             <div class="input-box">
-              <span class="details">Phone Number</span>
-              <input type="text" placeholder="Enter student's number" id="number">
-            </div>
-            <div class="input-box">
-              <span class="details">Email address</span>
-              <input type="text" placeholder="Enter student's Email" id="email">
-            </div>
-            <div class="input-box">
-              <span class="details">Address</span>
-              <input type="text" placeholder="Enter student's Address" id="address">
-            </div>
-            <div class="column" style="display: flex;
+              <label>department</label>
+              <select style="height: 45px;
+                  width: 100%;
+                  outline: none;
+                  font-size: 16px;
+                  border-radius: 5px;
+                  padding-left: 15px;
+                  border: 1px solid #ccc;
+                  border-bottom-width: 2px;
+                  transition: all 0.3s ease;">
+                <option value="General">General</option>
+                <option value="IS">Information System</option>
+                <option value="CS">Computer Science</option>
+                <option value="AI">Artificial Intelligence</option>
+                <option value="IT">Information Technology</option>
+                <option value="DS">Decision Support</option>
+              </select>
+              <div class="input-box">
+                <span class="details">Phone Number</span>
+                <input type="text" placeholder="Enter student's number" id="number">
+              </div>
+              <div class="input-box">
+                <span class="details">Email address</span>
+                <input type="text" placeholder="Enter student's Email" id="email">
+              </div>
+              <div class="input-box">
+                <span class="details">Address</span>
+                <input type="text" placeholder="Enter student's Address" id="address">
+              </div>
+              <div class="column" style="display: flex;
                       column-gap: 15px;
                       width: 325px;">
-              <div class="input-box">
-                <label>level</label>
-                <input type="number" placeholder="Enter student's level" id="level">
+                <div class="input-box">
+                  <label>level</label>
+                  <input type="number" placeholder="Enter student's level" id="level">
+                </div>
+                <div class="input-box">
+                  <label>Birth Date</label>
+                  <input type="date" placeholder="Enter student's birth date" id="date" style="width: 118%;">
+                </div>
+                <div class="input-box">
+                  <label>GPA</label>
+                  <input type="number" placeholder="Enter student's GPA" id="GPA">
+                </div>
               </div>
-              <div class="input-box">
-                <label>Birth Date</label>
-                <input type="date" placeholder="Enter student's birth date" id="date" style="width: 118%;">
+              <!-- -->
+            </div>
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1">
+              <input type="radio" name="gender" id="dot-2">
+              <input type="radio" name="gender" id="dot-3">
+              <span class="gender-title">Gender</span>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Female</span>
+                </label>
+                <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="gender">Prefer not to say</span>
+                </label>
               </div>
             </div>
-            <!-- -->
-          </div>
-          <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
-            <input type="radio" name="gender" id="dot-3">
-            <span class="gender-title">Gender</span>
-            <div class="category">
-              <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="gender">Male</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span class="gender">Female</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span class="gender">Prefer not to say</span>
-              </label>
+            <div class="button">
+              <input type="submit" value="Register" id="Register">
             </div>
-          </div>
-          <div class="button">
-            <input type="submit" value="Register" id="Register">
-          </div>
         </form>
       </div>
     </div>
