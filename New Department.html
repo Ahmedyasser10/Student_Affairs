@@ -2,139 +2,127 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="edit.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Department</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="edit.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Department</title>
 </head>
+
 <body class="main">
-    
 
-<nav class="nav">
+
+  <nav class="nav">
+
     <div class="logo"><a href="navpage v2.html"> students affairs</a> </div>
-<ul >
-    <li ><a href="user.html">user</a></li>
-    <li ><a href="Add student.html">add student</a></li>
-    <li ><a href="delete.html">delete student</a></li>
-    <li ><a href="edit student.html">edit student info</a></li>
-    <li ><a href="table.html">display students</a></li>
-    <li ><a href="New Department.html">new department</a></li>
-</ul>
-<a href="#" class="logout">logout</a>
 
-<div class="btn">
-<i class="fa-solid fa-bars"></i>
-</div>   
-</nav>
-<div class="menu">
-<li ><a href="user.html">user</a></li>
-<li ><a href="Add student.html">add student</a></li>
-<li ><a href="delete.html">delete student</a></li>
-<li ><a href="edit student.html">edit student info</a></li>
-<li ><a href="table.html">display students</a></li>
-<li ><a href="New Department.html">new department</a></li>
-<li><a href="#" class="logout">logout</a></li>
-</div>
-<script>
-const btn=document.querySelector(".btn")
-const icon=document.querySelector(".btn i")
-const menu=document.querySelector(".menu")
+    <ul>
+      <li><a href="user.html">user</a></li>
+      <li><a href="Add student.html">add student</a></li>
+      <li><a href="delete.html">delete student</a></li>
+      <li><a href="edit student.html">edit student info</a></li>
+      <li><a href="table.html">display students</a></li>
+      <li><a href="New Department.html">new department</a></li>
+    </ul>
 
-btn.onclick = function(){
-    menu.classList.toggle("op")
-    const open=menu.classList.contains('op')
+    <a href="login.html" class="logout">logout</a>
 
-    icon.classList=open 
-    ?'fa-solid fa-xmark'
-    :'fa-solid fa-bars'
-}
-
-</script>
-<br>
-<body>
-    <div class="container">
-      <div class="title"> New depaartment</div>
-      <div class="content">
-        <form action="#">
-          <div class="user-details">
-              <div class="input-box">
-                  <span class="details">ID</span>
-                  <input type="text" placeholder="Enter your ID" required>
-                </div>
-            <div class="input-box">
-              <span class="details">name</span>
-              <input type="text" placeholder="Enter your name" required>
-            </div>
-            <div class="input-box">
-              <span class="details">Phone Number</span>
-              <input type="text" placeholder="Enter your number" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Password</span>
-                <input type="text" placeholder="Enter your password" required>
-              </div>
-            
-                <div class="input-box">
-                  <label>level</label>
-                  <input type="number" placeholder="Enter your level" required />
-                </div>
-                <div class="input-box">
-                  <label>department</label>
-                  <select style="height: 45px;
-                  width: 100%;
-                  outline: none;
-                  font-size: 16px;
-                  border-radius: 5px;
-                  padding-left: 15px;
-                  border: 1px solid #ccc;
-                  border-bottom-width: 2px;
-                  transition: all 0.3s ease;">
-                    <option value="IS">Information System</option>
-                    <option value="CS">Computer Science</option>
-                    <option value="AI">Artificial Intelligence</option>
-                    <option value="IT">Information Technology</option>
-                    <option value="DS">Decision Support</option>
-                </select>
-                </div>
-              </div>
-              <!-- -->
-            <div class="gender-details">
-              <input type="radio" name="gender" id="dot-1">
-              <input type="radio" name="gender" id="dot-2">
-              <input type="radio" name="gender" id="dot-3">
-              <span class="gender-title">Gender</span>
-              <div class="category">
-                <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="gender">Male</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span class="gender">Female</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span class="gender">Prefer not to say</span>
-                </label>
-              </div>
-            </div>
-            <div class="button">
-              <input type="submit" value="Register">
-          </div>
-        </form>
-      </div>
+    <div class="btn">
+      <i class="fa-solid fa-bars"></i>
     </div>
-  
-  </body>
-</main>
+  </nav>
+  <div class="menu">
+    <li><a href="user.html">user</a></li>
+    <li><a href="Add student.html">add student</a></li>
+    <li><a href="delete.html">delete student</a></li>
+    <li><a href="edit student.html">edit student info</a></li>
+    <li><a href="table.html">display students</a></li>
+    <li><a href="New Department.html">new department</a></li>
+    <li><a href="login.html" class="logout">logout</a></li>
+  </div>
+
+  <script>
+    const btn = document.querySelector(".btn")
+    const icon = document.querySelector(".btn i")
+    const menu = document.querySelector(".menu")
+
+    btn.onclick = function () {
+      menu.classList.toggle("op")
+      const open = menu.classList.contains('op')
+
+      icon.classList = open
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
+
+  <br>
+  <div class="container">
+
+    <div class="title"> New depaartment</div>
+
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">ID</span>
+            <input type="text" placeholder="Enter your ID" required>
+          </div>
+          <div class="input-box">
+            <span class="details">name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+
+
+
+          <div class="input-box">
+            <label>level</label>
+            <input type="number" placeholder="Enter your level" required />
+          </div>
+          <div class="input-box">
+            <label>department</label>
+            <select style="height: 45px;
+                width: 100%;
+                outline: none;
+                font-size: 16px;
+                border-radius: 5px;
+                padding-left: 15px;
+                border: 1px solid #ccc;
+                border-bottom-width: 2px;
+                transition: all 0.3s ease;">
+              <option value="GN">General</option>
+              <option value="IS">Information System</option>
+              <option value="CS">Computer Science</option>
+              <option value="AI">Artificial Intelligence</option>
+              <option value="IT">Information Technology</option>
+              <option value="DS">Decision Support</option>
+
+            </select>
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  </main>
 </body>
 </main>
 <footer>
-    &copy; all rights are reserved to FCAI
+  &copy; all rights are reserved to FCAI
 </footer>
+
 </html>

@@ -13,16 +13,16 @@ const date = document.querySelector('input[type="date"]');
 
 
 class User {
-  constructor( fullname , username , password , id  , phonenumber  , date , type ) {
-    this.username = username ;
-    this.password = password ; 
-    this.fullname = fullname ;
-    this.phonenumber = phonenumber ;
-    this.date = date ;
-    this.logedin = 0 ;
-    this.type = type ;
-    this.id = id ;
-    
+  constructor(fullname, username, password, id, phonenumber, date, type) {
+    this.username = username;
+    this.password = password;
+    this.fullname = fullname;
+    this.phonenumber = phonenumber;
+    this.date = date;
+    this.logedin = 0;
+    this.type = type;
+    this.id = id;
+
   }
 }
 
@@ -38,18 +38,18 @@ submitBtn.addEventListener('click', function (event) {
   // Prevent the default form submission behavior
   event.preventDefault();
 
-  let naid=/^\d{14}$/;
-  let nameRegex = /^[a-zA-Z]+$/ ;
-  let idRegex = /^\d{8}$/ ;
+  let naid = /^\d{14}$/;
+  let nameRegex = /^[a-zA-Z]+$/;
+  let idRegex = /^\d{8}$/;
   let numRegex = /^(010|011|012|015)\d{8}$/;
 
-  if (!naid.test(NationalID.value.trim()) ) {
+  if (!naid.test(NationalID.value.trim())) {
     alert('please enter a correct National ID');
     NationalID.focus();
     return false;
   }
   // Check if the required fields are filled
-  if (fullname.value.trim() === ''||!nameRegex.test(fullname.value.trim())) {
+  if (fullname.value.trim() === '' || !nameRegex.test(fullname.value.trim())) {
     alert('Please enter your full name.');
     fullname.focus();
     return false;
@@ -60,9 +60,9 @@ submitBtn.addEventListener('click', function (event) {
     username.focus();
     return false;
   }
-  
 
-  if (password.value.trim() === ''|| password.value.trim().length <8) {
+
+  if (password.value.trim() === '' || password.value.trim().length < 8) {
     alert('Password should be at least 8 characters');
     password.focus();
     return false;
@@ -85,28 +85,28 @@ submitBtn.addEventListener('click', function (event) {
     date.focus();
     return false;
   }
-  for( i = 0 ;i<localStorage.length ; i++){
-    let k = localStorage.key(i) ;
-    
+  for (i = 0; i < localStorage.length; i++) {
+    let k = localStorage.key(i);
+
     if (JSON.parse(localStorage.getItem(k)).type === 0)
-      continue ;
-    
-    if (JSON.parse(localStorage.getItem(k)).NationalID === NationalID.value  ) {
-        alert("duplicated NationalID ") ;
-        return false ;
+      continue;
+
+    if (JSON.parse(localStorage.getItem(k)).NationalID === NationalID.value) {
+      alert("duplicated NationalID ");
+      return false;
     }
-    if (JSON.parse(localStorage.getItem(k)).username === username.value  ) {
-      alert(" this username is already used") ;
-      return false ;
-  }
+    if (JSON.parse(localStorage.getItem(k)).username === username.value) {
+      alert(" this username is already used");
+      return false;
+    }
   }
 
-  const user = new User(fullname.value , username.value ,password.value ,NationalID.value ,phonenum.value ,date.value , 1) ;
+  const user = new User(fullname.value, username.value, password.value, NationalID.value, phonenum.value, date.value, 1);
 
-  localStorage.setItem( localStorage.length+1,JSON.stringify(user));
+  localStorage.setItem(localStorage.length + 1, JSON.stringify(user));
   console.log("Success");
-  
+
   window.location.replace(
     "login.html"
-);
+  );
 });

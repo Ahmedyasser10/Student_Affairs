@@ -1,21 +1,24 @@
-body{
+body {
     background: linear-gradient(-45deg, #fff, #fff, #848484, #0c0c0c);
     background-size: 400% 400%;
 }
 
-a{
+a {
     text-decoration: none;
     color: azure;
     font-size: 17px;
 }
-li{
-    
+
+li {
+
     list-style: none;
 }
-a:hover{
-    color:orange;
+
+a:hover {
+    color: orange;
 }
-.nav{
+
+.nav {
     width: 90%;
     height: 20%;
     max-width: 1200%;
@@ -23,23 +26,27 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
+
 }
-.nav .logo a{
+
+.nav .logo a {
     font-size: 2rem;
     font-weight: bold;
 }
-ul{
+
+ul {
     display: flex;
     gap: 3rem;
 }
-.btn{
+
+.btn {
     color: azure;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
 }
-.menu{
+
+.menu {
     display: none;
     position: absolute;
     right: 2rem;
@@ -51,19 +58,22 @@ ul{
     overflow: hidden;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.menu.op{
+
+.menu.op {
     height: 38%;
 }
-.menu li{
+
+.menu li {
     padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
-.logout{
+
+.logout {
     background-color: #1e68e47a;
-    color:#fff;
+    color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
@@ -71,50 +81,60 @@ ul{
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2 ease ;
+    transition: scale 0.2 ease;
 }
-.logout:hover{
+
+.logout:hover {
     scale: 1.05;
     color: #fff;
 }
-.logout:active{
+
+.logout:active {
     scale: 0.95;
 }
 
-.menu .logout{
+.menu .logout {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.head{
+
+.head {
     position: relative;
-    top:80px;
+    top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color:azure;
+    color: azure;
 }
 
 
-@media (max-width: 1050px ){
-    ul,.nav .logout{
+@media (max-width: 1050px) {
+
+    ul,
+    .nav .logout {
         display: none;
     }
-    .nav .btn{
+
+    .nav .btn {
         display: block;
     }
-    .menu{
+
+    .menu {
         display: block;
     }
-    .menu a{
+
+    .menu a {
         color: #000;
     }
-    .menu a:hover{
+
+    .menu a:hover {
         color: orange;
     }
 }
+
 footer {
     position: absolute;
     bottom: 0;
@@ -123,4 +143,4 @@ footer {
     display: flex;
     justify-content: center;
     color: azure;
-  }
+}

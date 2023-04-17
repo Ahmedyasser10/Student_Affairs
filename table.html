@@ -4,145 +4,170 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Students</title>
     <link rel="stylesheet" href="mystyle.css">
-    
-    
+
+
 </head>
+
 <body>
-    
-<nav class="nav">
-    <div class="logo"><a href="navpage v2.html"> students affairs</a> </div>
-<ul >
-    <li ><a href="user.html">user</a></li>
-    <li ><a href="Add student.html">add student</a></li>
-    <li ><a href="delete.html">delete student</a></li>
-    <li ><a href="edit student.html">edit student info</a></li>
-    <li ><a href="table.html">display students</a></li>
-    <li ><a href="New Department.html">new department</a></li>
-</ul>
-<a href="#" class="logout">logout</a>
 
-<div class="btn">
-<i class="fa-solid fa-bars"></i>
-</div>   
-</nav>
-<div class="menu">
-<li ><a href="user.html">user</a></li>
-<li ><a href="Add student.html">add student</a></li>
-<li ><a href="delete.html">delete student</a></li>
-<li ><a href="edit student.html">edit student info</a></li>
-<li ><a href="table.html">display students</a></li>
-<li ><a href="New Department.html">new department</a></li>
-<li><a href="#" class="logout">logout</a></li>
-</div>
-<script>
-const btn=document.querySelector(".btn")
-const icon=document.querySelector(".btn i")
-const menu=document.querySelector(".menu")
+    <nav class="nav">
+        <div class="logo"><a href="navpage v2.html"> students affairs</a> </div>
+        <ul>
+            <li><a href="user.html">user</a></li>
+            <li><a href="Add student.html">add student</a></li>
+            <li><a href="delete.html">delete student</a></li>
+            <li><a href="edit student.html">edit student info</a></li>
+            <li><a href="table.html">display students</a></li>
+            <li><a href="New Department.html">new department</a></li>
+        </ul>
+        <a href="login.html" class="logout">logout</a>
 
-btn.onclick = function(){
-    menu.classList.toggle("op")
-    const open=menu.classList.contains('op')
+        <div class="btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <div class="menu">
+        <li><a href="user.html">user</a></li>
+        <li><a href="Add student.html">add student</a></li>
+        <li><a href="delete.html">delete student</a></li>
+        <li><a href="edit student.html">edit student info</a></li>
+        <li><a href="table.html">display students</a></li>
+        <li><a href="New Department.html">new department</a></li>
+        <li><a href="login.html" class="logout">logout</a></li>
+    </div>
+    <script>
+        const btn = document.querySelector(".btn")
+        const icon = document.querySelector(".btn i")
+        const menu = document.querySelector(".menu")
 
-    icon.classList=open 
-    ?'fa-solid fa-xmark'
-    :'fa-solid fa-bars'
-}
+        btn.onclick = function () {
+            menu.classList.toggle("op")
+            const open = menu.classList.contains('op')
 
-</script>
+            icon.classList = open
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+    </script>
 </body>
 
 
-    <body class="main">
+<body class="main">
     <main class="table">
         <section class="table__header">
             <h1>FCAI Students</h1>
             <div class="input-group">
                 <img src="images/search.png" alt="">
-            </div> 
+            </div>
         </section>
         <section class="table__body">
-    <table>
-       <thead>
-            <tr>
-                <th>NO.</th>
-                <th>student</th>
-                <th>ID</th>
-                <th>Year</th>
-                <th>GPA</th>
-                <th>    status    </th>
-            </tr>
-       </thead>
-       <tbody>
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>0</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>  1</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>   
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>2</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>  3</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>4</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>  5</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src ="images/female.png" alt="">salma ramadan </td>
-                <td>  6</td>
-                <td>2</td>
-                <td>4<td>
-                <td><p class="status active">Active</p></td>
-            </tr>
-       </tbody>
-    </table>
-   
+            <table>
+                <thead>
+                    <tr>
+                        <th>NO.</th>
+                        <th>student</th>
+                        <th>ID</th>
+                        <th>Year</th>
+                        <th>GPA</th>
+                        <th> status </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td> 1</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td> 3</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td> 5</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/female.png" alt="">salma ramadan </td>
+                        <td> 6</td>
+                        <td>2</td>
+                        <td>4
+                        <td>
+                        <td>
+                            <p class="status active">Active</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
 
 </body><br><br>
 </main>
 <footer>
     &copy; all rights are reserved to FCAI
 </footer>
+
 </html>
