@@ -33,6 +33,7 @@ body {
 h1 {
     text-align: center;
     font-size: 50px;
+    color: white;
 }
 
 form {
@@ -60,7 +61,7 @@ input:focus {
 }
 
 #login-btn {
-    background-color: #2e2d21;
+    background-color: #3d5dbc;
     color: white;
     font-size: 16px;
     font-weight: bold;
