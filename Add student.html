@@ -27,8 +27,9 @@
     <li ><a href="edit student.html">edit student info</a></li>
     <li ><a href="table.html">display students</a></li>
     <li ><a href="New Department.html">new department</a></li>
+    <li ><a href="Search.html">search</a></li>
 </ul>
-<a href="#" class="logout">logout</a>
+<a href="login.html" class="logout">logout</a>
 
 <div class="btn">
 <i class="fa-solid fa-bars"></i>
@@ -41,6 +42,7 @@
 <li ><a href="edit student.html">edit student info</a></li>
 <li ><a href="table.html">display students</a></li>
 <li ><a href="New Department.html">new department</a></li>
+<li ><a href="Search.html">search</a></li> 
 <li><a href="#" class="logout">logout</a></li>
 </div>
 <script>
@@ -63,38 +65,38 @@ btn.onclick = function(){
             <div class="container">
               <div class="title">Add new student</div>
               <div class="content">
-                <form action="#">
+                <form action="Add student.html">
                   <div class="user-details">
                       <div class="input-box">
                           <span class="details">ID</span>
-                          <input type="text" placeholder="Enter student's ID" required>
+                          <input type="text" placeholder="Enter student's ID" id = "id">
                         </div>
                     <div class="input-box">
                       <span class="details">name</span>
-                      <input type="text" placeholder="Enter student's name" required>
+                      <input type="text" placeholder="Enter student's name"  id = "name">
                     </div>
                     <div class="input-box">
                       <span class="details">Phone Number</span>
-                      <input type="text" placeholder="Enter student's number" required>
+                      <input type="text" placeholder="Enter student's number"  id="number">
                     </div>
                     <div class="input-box">
                         <span class="details">Email address</span>
-                        <input type="text" placeholder="Enter student's Email" required>
+                        <input type="text" placeholder="Enter student's Email"  id = "email">
                       </div>
                       <div class="input-box">
                         <span class="details">Address</span>
-                        <input type="text" placeholder="Enter student's Address" required>
+                        <input type="text" placeholder="Enter student's Address"  id = "address">
                       </div>
                       <div class="column" style="display: flex;
                       column-gap: 15px;
                       width: 325px;">
                         <div class="input-box">
                           <label>level</label>
-                          <input type="number" placeholder="Enter student's level" required />
+                          <input type="number" placeholder="Enter student's level"  id = "level"/>
                         </div>
                         <div class="input-box">
                           <label>Birth Date</label>
-                          <input type="date" placeholder="Enter student's birth date" required />
+                          <input type="date" placeholder="Enter student's birth date"  id = "date" />
                         </div>
                       </div>
                       <!-- -->
@@ -120,7 +122,7 @@ btn.onclick = function(){
                       </div>
                     </div>
                     <div class="button">
-                      <input type="submit" value="Register">
+                      <input type="submit" value="Register" id = "Register">
                   </div>
                 </form>
               </div>
@@ -131,7 +133,7 @@ btn.onclick = function(){
     <footer>
         &copy; all rights are reserved to FCAI-CU
     </footer>
-
+    <script src="addStudent.js"></script>
 </body>
 
 </html>
