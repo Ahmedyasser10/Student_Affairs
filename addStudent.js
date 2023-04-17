@@ -104,6 +104,7 @@ button.addEventListener('click', function (event) {
     }
     let s = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, date.value, 0, departmentSelect.value, GPA.value);
     localStorage.setItem(localStorage.length + 1, JSON.stringify(s));
+    alert('A new student is successfuly added');
 
 });
 
