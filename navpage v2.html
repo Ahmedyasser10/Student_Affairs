@@ -26,7 +26,7 @@
             <li><a href="table.html">display students</a></li>
             <li><a href="New Department.html">new department</a></li>
         </ul>
-        <a href="login.html" class="logout" id="logOut">logout</a>
+        <a href="login.html" class="logout" id="logout">logout</a>
 
         <div class="btn">
             <i class="fa-solid fa-bars"></i>
@@ -42,13 +42,14 @@
         <li><a href="edit student.html">edit student info</a></li>
         <li><a href="table.html">display students</a></li>
         <li><a href="New Department.html">new department</a></li>
-        <li><a href="login.html" class="logout" id="logOut">logout</a></li>
+        <li><a href="login.html" class="logout" id="logout2">logout</a></li>
     </div>
     <script>
         const btn = document.querySelector(".btn");
         const icon = document.querySelector(".btn i");
         const menu = document.querySelector(".menu");
-        const logOut = document.querySelector("#LogOut");
+        const logOut = document.querySelector("#Logout");
+        const logOut2 = document.querySelector("#Logout2");
         logOut.onclick = function () {
             for (i = 0; i < localStorage.length; i++) {
                 let k = localStorage.key(i);
@@ -63,6 +64,21 @@
                 }
             }
         }
+        logOut2.onclick = function () {
+            for (i = 0; i < localStorage.length; i++) {
+                let k = localStorage.key(i);
+                if (JSON.parse(localStorage.getItem(k)).type === 0)
+                    continue;
+
+                let x = JSON.parse(localStorage.getItem(k));
+                if (x.logedin === 1) {
+                    x.logedin = 0;
+                    localStorage.setItem(k, JSON.stringify(x));
+                    break;
+                }
+            }
+        }
+
         btn.onclick = function () {
             menu.classList.toggle("op")
             const open = menu.classList.contains('op')

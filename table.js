@@ -1,4 +1,7 @@
 
+const logOut = document.getElementById("logout");
+const logOut2 = document.getElementById("logout2");
+
 window.onload = function(){
   let ctr = 0 ;
   for( i = 0 ; i< localStorage.length ; i++){
@@ -38,5 +41,34 @@ window.onload = function(){
     newStudent.appendChild(cell7);  
 
     list.appendChild(newStudent) ;
+  }
+}
+logOut.onclick = function () {
+  for (i = 0; i < localStorage.length; i++) {
+      let k = localStorage.key(i);
+      if (JSON.parse(localStorage.getItem(k)).type === 0)
+          continue;
+
+      let x = JSON.parse(localStorage.getItem(k));
+      if (x.logedin === 1) {
+          x.logedin = 0;
+          localStorage.setItem(k, JSON.stringify(x));
+          break;
+      }
+  }
+}
+
+logOut2.onclick = function () {
+  for (i = 0; i < localStorage.length; i++) {
+      let k = localStorage.key(i);
+      if (JSON.parse(localStorage.getItem(k)).type === 0)
+          continue;
+
+      let x = JSON.parse(localStorage.getItem(k));
+      if (x.logedin === 1) {
+          x.logedin = 0;
+          localStorage.setItem(k, JSON.stringify(x));
+          break;
+      }
   }
 }

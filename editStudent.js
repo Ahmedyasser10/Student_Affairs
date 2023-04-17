@@ -10,7 +10,7 @@ const logOut = document.getElementById("logout");
 const logOut2 = document.getElementById("logout2");
 
 class Student {
-    constructor(id, name, phone, email, address, level, gpa, type) {
+    constructor(id, name, phone, email, address, level, gpa, type , depart) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -19,6 +19,7 @@ class Student {
         this.level = level;
         this.gpa = gpa;
         this.type = type;
+        this.depart = depart ;
     }
 }
 
@@ -34,7 +35,7 @@ const isValidPhoneNumber = phoneNumber => {
 }
 
 const hasOnlyDigits = str => {
-    const regex = /^\d+$/;
+    const regex = /^\d{8}$/;
     return regex.test(str);
 }
 function isValidName(name) {
@@ -107,8 +108,8 @@ button.addEventListener('click', function (event) {
         alert('Stuend is not found');
         return false;
     } else {
-        localStorage.removeItem(key);
-        let update = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, gpa.value, 0);
+        let last = JSON.parse(localStorage.getItem(key)) ;
+        let update = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, gpa.value, 0 , last.depart );
         localStorage.setItem(key, JSON.stringify(update));
         alert('Student\'s information has been edit successfully');
     }
