@@ -6,9 +6,11 @@ const address = document.getElementById("address");
 const level = document.getElementById("level");
 const gpa = document.getElementById("gpa");
 const button = document.getElementById("edit");
+const logOut = document.getElementById("logout");
+const logOut2 = document.getElementById("logout2");
 
 class Student {
-    constructor(id, name, phone, email, address, level, gpa,  type) {
+    constructor(id, name, phone, email, address, level, gpa, type) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -68,16 +70,17 @@ button.addEventListener('click', function (event) {
     }
     if (level.value < 1 || level.value > 4) {
         alert('Enter a valid level between 1 and 4');
+        return false;
     }
-    if(gpa.value < 1 || gpa.value > 4){
+    if (gpa.value < 1 || gpa.value > 4) {
         alert('Enter a valid GPA between 1 and 4');
+        return false;
     }
     let flag = 0;
     for (let i = 0; i < localStorage.length; ++i) {
 
         let k = localStorage.key(i);
         let x = JSON.parse(localStorage.getItem(k));
-
 
         if (x.type === 1) { // check if the current Registerer is a Student
             continue;
@@ -96,20 +99,49 @@ button.addEventListener('click', function (event) {
             alert('Phone number is already used');
             return false;
         }
-        
+
 
     }
 
     if (!flag) {
-        alert('User not found');
+        alert('Stuend is not found');
         return false;
     } else {
         localStorage.removeItem(key);
         let update = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, gpa.value, 0);
         localStorage.setItem(key, JSON.stringify(update));
-        alert('Student has been edit successfully');
+        alert('Student\'s information has been edit successfully');
     }
 
 });
 
 
+logOut.onclick = function () {
+    for (i = 0; i < localStorage.length; i++) {
+        let k = localStorage.key(i);
+        if (JSON.parse(localStorage.getItem(k)).type === 0)
+            continue;
+
+        let x = JSON.parse(localStorage.getItem(k));
+        if (x.logedin === 1) {
+            x.logedin = 0;
+            localStorage.setItem(k, JSON.stringify(x));
+            break;
+        }
+    }
+}
+
+logOut2.onclick = function () {
+    for (i = 0; i < localStorage.length; i++) {
+        let k = localStorage.key(i);
+        if (JSON.parse(localStorage.getItem(k)).type === 0)
+            continue;
+
+        let x = JSON.parse(localStorage.getItem(k));
+        if (x.logedin === 1) {
+            x.logedin = 0;
+            localStorage.setItem(k, JSON.stringify(x));
+            break;
+        }
+    }
+}
