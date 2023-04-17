@@ -33,7 +33,7 @@ const hasOnlyDigits = str => {
     return regex.test(str);
   }
   function isValidName(name) {
-    const nameRegex = /^[a-zA-Z]{5,20}$/; // matches only characters between 5 and 20 in length
+   let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
     return nameRegex.test(name);
   }
 
