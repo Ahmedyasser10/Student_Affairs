@@ -59,8 +59,8 @@ form.addEventListener('submit', e=>{
         ID.focus();
         return false;
     }
-    if(!hasOnlyDigits(idValue) || idValue.length < 8 || idValue.length > 20){
-        alert('Enter a valid ID');
+    if(!hasOnlyDigits(idValue) || idValue.length < 5 || idValue.length > 20){
+        alert('Enter a valid ID contains only numbers between 5 and 20 in length');
         idValue.focus();
         return false;
     }
