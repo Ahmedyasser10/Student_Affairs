@@ -43,8 +43,8 @@ submitBtn.addEventListener('click', function (event) {
 
   let idRegex = /^\d{8}$/;
 
-  if (username.value.trim() === '' || username.value.trim().length < 3 || !idRegex.test(username.value)) {
-    alert('Username should be more than 3 characters');
+  if (username.value.trim() === '' || !idRegex.test(username.value)) {
+    alert('Username should be 8 characters');
     username.focus();
     return false;
   }
