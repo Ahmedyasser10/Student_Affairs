@@ -4,18 +4,18 @@ const phoneNumber = document.getElementById("number");
 const email = document.getElementById("email");
 const address = document.getElementById("address");
 const level = document.getElementById("level");
-const date = document.getElementById("date");
+const gpa = document.getElementById("gpa");
 const button = document.getElementById("edit");
 
 class Student {
-    constructor(id, name, phone, email, address, level, date, type) {
+    constructor(id, name, phone, email, address, level, gpa,  type) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.level = level;
-        this.date = date;
+        this.gpa = gpa;
         this.type = type;
     }
 }
@@ -36,9 +36,10 @@ const hasOnlyDigits = str => {
     return regex.test(str);
 }
 function isValidName(name) {
-    const nameRegex = /^[a-zA-Z]{5,20}$/; // matches only characters between 5 and 20 in length
+    let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
     return nameRegex.test(name);
 }
+
 
 button.addEventListener('click', function (event) {
     let key;
@@ -62,11 +63,14 @@ button.addEventListener('click', function (event) {
         return false;
     }
     if (!isValidName(studentName.value)) {
-        alert('Enter a valid Name contains only characters between 5 and 20 in length');
+        alert('Enter a valid Name contains only characters separated by space');
         return false;
     }
     if (level.value < 1 || level.value > 4) {
         alert('Enter a valid level between 1 and 4');
+    }
+    if(gpa.value < 1 || gpa.value > 4){
+        alert('Enter a valid GPA between 1 and 4');
     }
     let flag = 0;
     for (let i = 0; i < localStorage.length; ++i) {
@@ -92,6 +96,7 @@ button.addEventListener('click', function (event) {
             alert('Phone number is already used');
             return false;
         }
+        
 
     }
 
@@ -100,8 +105,9 @@ button.addEventListener('click', function (event) {
         return false;
     } else {
         localStorage.removeItem(key);
-        let update = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, date.value, 0);
+        let update = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, gpa.value, 0);
         localStorage.setItem(key, JSON.stringify(update));
+        alert('Student has been edit successfully');
     }
 
 });
