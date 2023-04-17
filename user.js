@@ -5,10 +5,10 @@ const form = document.getElementById('user');
 const firstname = document.querySelector('#fname');
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
-const confirmpass = document.querySelector('#confirmpass');
 const phonenum = document.querySelector('#phonenum');
 const genderRadios = document.querySelectorAll('input[type="radio"][name="gender"]');
-const logOut = document.querySelector("#LogOut");
+const logOut = document.getElementById("logout");
+const logOut2 = document.getElementById("logout2");
 
 
 // Get the submit button
@@ -53,15 +53,13 @@ window.onload = function () {
   username.value = curUser.username;
   password.value = curUser.password;
   phonenum.value = curUser.phonenumber;
-  confirmpass.value = curUser.password;
-
 }
 
 // Add an event listener to the submit button
 submitBtn.addEventListener('click', function (event) {
   // Prevent the default form submission behavior
   event.preventDefault();
-  let nameRegex = /^[a-zA-Z]+$/;
+  let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
   let idRegex = /^\d{8}$/;
   let numRegex = /^(010|011|012|015)\d{8}$/;
 
@@ -92,11 +90,6 @@ submitBtn.addEventListener('click', function (event) {
     return false;
   }
 
-  if (confirmpass.value.trim() != password.value.trim()) {
-    alert('Passwords do not match!');
-    confirmpass.focus();
-    return false;
-  }
 
   let genderSelected = false;
 
@@ -122,7 +115,7 @@ submitBtn.addEventListener('click', function (event) {
     if ((JSON.parse(localStorage.getItem(k)).logedin === 1))
       c = k;
     if (JSON.parse(localStorage.getItem(k)).username === username.value && (JSON.parse(localStorage.getItem(k)).logedin === 0)) {
-      alert(" this username is already used");
+      alert(" This username is already used");
       return false;
     }
   }
@@ -155,3 +148,19 @@ logOut.onclick = function () {
     }
   }
 }
+
+logOut2.onclick = function () {
+  for (i = 0; i < localStorage.length; i++) {
+    let k = localStorage.key(i);
+    if (JSON.parse(localStorage.getItem(k)).type === 0)
+      continue;
+
+    let x = JSON.parse(localStorage.getItem(k));
+    if (x.logedin === 1) {
+      x.logedin = 0;
+      localStorage.setItem(k, JSON.stringify(x));
+      break;
+    }
+  }
+}
+
