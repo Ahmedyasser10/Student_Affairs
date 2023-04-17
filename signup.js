@@ -39,7 +39,7 @@ submitBtn.addEventListener('click', function (event) {
   event.preventDefault();
 
   let naid = /^\d{14}$/;
-  let nameRegex = /^[a-zA-Z]+$/;
+  let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
   let idRegex = /^\d{8}$/;
   let numRegex = /^(010|011|012|015)\d{8}$/;
 
