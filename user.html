@@ -11,8 +11,8 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User info</title>
-  <link rel="stylesheet" href="user.css">
+  <title>User info</title>s
+  <link rel="stylesheet" href="edit.css">
 </head>
 
 <body class="main">
@@ -43,7 +43,21 @@
     <li><a href="New Department.html">New department</a></li>
     <li><a href="login.html" class="logout">logout</a></li>
   </div>
+  <script>
+    const btn = document.querySelector(".btn")
+    const icon = document.querySelector(".btn i")
+    const menu = document.querySelector(".menu")
 
+    btn.onclick = function () {
+      menu.classList.toggle("op")
+      const open = menu.classList.contains('op')
+
+      icon.classList = open
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+
+  </script>
 
   <body>
     <div class="container">
@@ -68,7 +82,7 @@
               <span class="details">Password</span>
               <input type="password" placeholder="Enter your password" id="password">
             </div>
-            
+
           </div>
           <div class="gender-details">
             <input type="radio" name="gender" id="dot-1">
@@ -98,15 +112,7 @@
     </div>
   </body>
   </main>
-  <footer style="
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  color: rgb(0, 0, 0);
-">
+  <footer>
     &copy; all rights are reserved to FCAI
   </footer>
   <script src="user.js"> </script>
