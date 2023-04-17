@@ -5,18 +5,23 @@ const email = document.getElementById("email");
 const address = document.getElementById("address");
 const level = document.getElementById("level");
 const date = document.getElementById("date");
+const GPA = document.getElementById("GPA");
+const departmentSelect = document.querySelector('select');
 const button = document.getElementById("Register");
 
-class Student{
-    constructor(id ,name, phone, email, address, level, date, type){
-    this.id = id;
-    this.name = name;
-    this.phone = phone;
-    this.email = email;
-    this.address = address;
-    this.level = level;
-    this.date = date;
-    this.type = type;
+
+class Student {
+    constructor(id, name, phone, email, address, level, date, type, depart, gpa) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.level = level;
+        this.date = date;
+        this.type = type;
+        this.depart = depart;
+        this.gpa = gpa;
     }
 }
 const isValidEmail = email => {
@@ -26,75 +31,79 @@ const isValidEmail = email => {
 const isValidPhoneNumber = phoneNumber => {
     const regex = /^(\+)?(\d{1,2})?(\s)?((\d{3})|(\(\d{3}\)))?(\s|-)?(\d{3})(\s|-)?(\d{4})$/;
     return regex.test(phoneNumber);
-  }
+}
 
 const hasOnlyDigits = str => {
     const regex = /^\d+$/;
     return regex.test(str);
-  }
-  function isValidName(name) {
-   let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
+}
+function isValidName(name) {
+    let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
     return nameRegex.test(name);
-  }
+}
 
-button.addEventListener ('click',function(event){
- 
+button.addEventListener('click', function (event) {
+
     /*
-     validate data input here
+    validate data input here
     */
-   event.preventDefault();
+    event.preventDefault();
 
-   if(ID.value === "" || email.value === "" || studentName.value ==="" || phoneNumber.value ==="" || address.value === "" || level.value ===""){
+    if (ID.value === "" || email.value === "" || studentName.value === "" || phoneNumber.value === "" || address.value === "" || level.value === "" || GPA.value === "") {
         alert('Data is not compelete');
         return false;
     }
-    if(!hasOnlyDigits(ID.value) ||ID.value.length < 5 || ID.value.length > 20){
+    if (!hasOnlyDigits(ID.value) || ID.value.length < 5 || ID.value.length > 20) {
         alert('Enter a valid ID contains only numbers between 5 and 20 in length');
         return false;
     }
-    if(!isValidEmail(email.value)){
+    if (!isValidEmail(email.value)) {
         alert('Enter a valid email');
         return fasle;
     }
-    if(!isValidPhoneNumber(phoneNumber.value)){
+    if (!isValidPhoneNumber(phoneNumber.value)) {
         alert('Enter a Valid phone number');
         return false;
     }
-    if(!isValidName(studentName.value)){
+    if (!isValidName(studentName.value)) {
         alert('Enter a valid Name contains only characters between 5 and 20 in length');
         return false;
     }
-    if(level.value < 1 || level.value > 4){
+    if (level.value < 1 || level.value > 4) {
         alert('Enter a valid level between 1 and 4');
-    }
-    
-
-   for(let i = 0; i < localStorage.length; ++i){
-    let k = localStorage.key(i);
-    let x = JSON.parse(localStorage.getItem(k));
-    if(x.type === 1) // check if the current Registerer is a Student
-        continue;
-    if(x.id === ID.value){
-        alert('ID is already used');
-        return false;
-    
-    }
-    if(x.email === email.value){
-        alert('email is already used');
         return false;
     }
-    if(x.phone === phoneNumber.value){
-        alert('phone number is already used');
+    if ((level.value <= 2) && (departmentSelect.value !== "General")) {
+        alert("this student can't be in a depatment");
         return false;
 
     }
-    
-}
-let s = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, date.value, 0);
-localStorage.setItem(localStorage.length+1, JSON.stringify(s));
+    if ((level.value > 2) && (departmentSelect.value === "General")) {
+        alert("this student must have depatment");
+        return false;
+    }
+
+    for (let i = 0; i < localStorage.length; ++i) {
+        let k = localStorage.key(i);
+        let x = JSON.parse(localStorage.getItem(k));
+        if (x.type === 1) // check if the current Registerer is a Student
+            continue;
+        if (x.id === ID.value) {
+            alert('ID is already used');
+            return false;
+        }
+        if (x.email === email.value) {
+            alert('email is already used');
+            return false;
+        }
+        if (x.phone === phoneNumber.value) {
+            alert('phone number is already used');
+            return false;
+        }
+
+    }
+    let s = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, date.value, 0, departmentSelect.value, GPA.value);
+    localStorage.setItem(localStorage.length + 1, JSON.stringify(s));
 
 });
-
-
- 
 
