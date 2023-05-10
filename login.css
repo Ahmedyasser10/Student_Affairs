@@ -151,3 +151,12 @@ input:focus {
     transition: 0s;
     transform: translate(0, 5%);
 }
+
+footer {
+    position: relative;
+    width: 99%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    color: azure;
+  }

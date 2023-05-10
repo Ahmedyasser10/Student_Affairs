@@ -133,7 +133,7 @@ ul {
 body {
   height: 100vh;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center; 
   /* align-items: center; */
   padding: 10px;
   background: linear-gradient(-45deg, #fff, #fff, #848484, #0c0c0c);
@@ -149,7 +149,7 @@ body {
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  /* margin-top: 154px; */
+  margin-top: 154px; 
   justify-content: center;
   z-index: 1;
   align-items: center;
@@ -272,7 +272,7 @@ form .button input:hover {
   background: linear-gradient(-135deg, #163e59, #14041b);
 }
 
-@media(max-width: 584px) {
+@media(max-width: 1050px) {
   .container {
     max-width: 100%;
   }
@@ -304,7 +304,7 @@ form .button input:hover {
 
 footer {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 99%;
   height: 25px;
   display: flex;

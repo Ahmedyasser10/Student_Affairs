@@ -102,17 +102,6 @@ body {
 }
 
 
-footer,
-.wrapper:after {
-    height: 50px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    height: 25px;
-}
 
 
 .but {
@@ -178,3 +167,12 @@ footer {
 .but:active::after {
     transform: translate(0, 5%);
 }
+
+footer {
+    position: relative;
+    width: 99%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    color: azure;
+  }
