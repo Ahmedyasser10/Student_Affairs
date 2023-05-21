@@ -136,11 +136,11 @@ ul {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 99%;
     height: 25px;
     display: flex;
     justify-content: center;
     color: azure;
-}
+    top: 55%;
+  }
