@@ -1,0 +1,77 @@
+{% extends 'menu.html'%}
+{%load static%}
+{%block content%}
+<!DOCTYPE html>
+
+<head>
+
+  <link rel="stylesheet" href="{%static 'css/edit.css'%}">
+  <title>Change Department</title>
+  </head>
+
+<body class="main">
+
+  <br>
+  <div class="container">
+
+    <div class="title"> New depaartment</div>
+
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">ID</span>
+            <input type="text" placeholder="Enter student's ID" id="id">
+          </div>
+          <div class="input-box">
+            <span class="details">name</span>
+            <input type="text" placeholder="Enter student's name" id="fullname">
+          </div>
+
+
+
+          <div class="input-box">
+            <label>level</label>
+            <input type="number" placeholder="Enter student's level" id="level" />
+          </div>
+          <div class="input-box">
+            <label>department</label>
+            <select style="height: 45px;
+                width: 100%;
+                outline: none;
+                font-size: 16px;
+                border-radius: 5px;
+                padding-left: 15px;
+                border: 1px solid #ccc;
+                border-bottom-width: 2px;
+                transition: all 0.3s ease;">
+              <option value="General">General</option>
+              <option value="IS">Information System</option>
+              <option value="CS">Computer Science</option>
+              <option value="AI">Artificial Intelligence</option>
+              <option value="IT">Information Technology</option>
+              <option value="DS">Decision Support</option>
+
+            </select>
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="button">
+          <input type="submit" value="submit" id="submit-btn">
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  </main>
+  <script src="{%static 'java/newdepart.js'%}"></script>
+</body>
+</main>
+<footer>
+  &copy; all rights are reserved to FCAI-CU
+</footer>
+
+</html>
+{%endblock%}

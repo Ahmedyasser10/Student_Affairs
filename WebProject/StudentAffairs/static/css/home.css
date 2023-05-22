@@ -1,0 +1,200 @@
+.img1 {
+   height: auto;
+   max-width: 12%;
+   float: left;
+}
+
+.img2 {
+   height: auto;
+   max-width: 15%;
+   float: right;
+}
+
+
+
+body,
+html {
+   height: 100%;
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bg {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100vw;
+   background-image: url(../images/c2966dc8295b40e2d32318aa7b921567.jpg);
+   background-size: 100% 100%;
+   background-attachment: fixed;
+   filter: brightness(50%);
+
+   z-index: -1;
+}
+
+.but {
+   all: unset;
+   width: 100px;
+   height: 30px;
+   font-size: 16px;
+   background: transparent;
+   position: absolute;
+   bottom: 3%;
+   right: 3%;
+   color: #f0f0f0;
+   cursor: pointer;
+   z-index: 1;
+   padding: 10px 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   white-space: nowrap;
+   touch-action: manipulation;
+}
+
+.but::after,
+.but::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   z-index: -10;
+   transition: all .5s;
+}
+
+.but::before {
+   transform: translate(0%, 0%);
+   width: 100%;
+   height: 100%;
+   background: #28282d;
+   border-radius: 10px;
+}
+
+.but::after {
+   transform: translate(10px, 10px);
+   width: 35px;
+   height: 35px;
+   background: #ffffff15;
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   border-radius: 50px;
+}
+
+.but:hover::before {
+   transform: translate(5%, 20%);
+   width: 110%;
+   height: 110%;
+}
+
+.but:hover::after {
+   border-radius: 10px;
+   transform: translate(0, 0);
+   width: 100%;
+   height: 100%;
+}
+
+.but:active::after {
+   transition: 0s;
+   transform: translate(0, 5%);
+}
+
+a {
+   text-decoration: none;
+   list-style: none;
+
+   color: white;
+   margin: 10px;
+}
+
+#tit {
+   /* color: white; */
+   display: flex;
+   height: 62%;
+   width: 85%;
+   margin: 9px 221px;
+   align-items: center;
+   color: #fdfdfe;
+   text-shadow: 0px 0px 5px #420505, 0px 0px 10px #603016, 0px 0px 10px #5d3b17,
+      0px 0px 20px #4b3506;
+
+}
+
+h1 {
+   height: 50%;
+   display: flex;
+   align-items: center;
+   margin: 0px -39px;
+}
+
+.links {
+   color: rgb(4, 4, 4);
+   text-align: center;
+   position: relative;
+   height: 180px;
+   width: 170px;
+   display: inline-block;
+   border-radius: 10px;
+   padding: 7% 1%;
+   box-sizing: border-box;
+   cursor: pointer;
+   margin: 7px 49px;
+   transition: transform 0.5s;
+
+
+}
+
+.all {
+   width: 584px;
+   margin: 100px;
+}
+
+.link1 {
+   background-image: url(../images/Student-Services-Su20.jpg);
+   background-position: center;
+   background-size: cover;
+   box-shadow: 0px 0px 20px 5px #000000;
+   -moz-box-shadow: 0px 0px 20px 5px #000000;
+   -webkit-box-shadow: 0px 0px 20px 5px #000000;
+}
+
+.link2 {
+
+   background-image: url(../images/human-resources.jpg);
+   background-position: center;
+   background-size: cover;
+   box-shadow: 0px 0px 20px 5px #171616;
+   -moz-box-shadow: 0px 0px 20px 5px #1b1919;
+   -webkit-box-shadow: 0px 0px 20px 5px #20201c;
+}
+
+.link3 {
+
+   background-image: url(../images/2Q.png);
+
+   background-position: center;
+   background-size: cover;
+   box-shadow: 0px 0px 20px 5px #232222;
+   -moz-box-shadow: 0px 0px 20px 5px #232222;
+   -webkit-box-shadow: 0px 0px 20px 5px #2b2b2a;
+
+}
+
+.link4 {
+   background-image: url(../images/th.jpeg);
+   background-position: center;
+   background-size: cover;
+   box-shadow: 0px 0px 20px 5px #232222;
+   -moz-box-shadow: 0px 0px 20px 5px #232222;
+   -webkit-box-shadow: 0px 0px 20px 5px #2b2b2a;
+
+}
+
+.links:hover {
+   transform: translateY(-5px);
+}
+
+b {
+   font-size: 14px;
+
+}

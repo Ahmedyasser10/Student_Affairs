@@ -1,43 +1,85 @@
-<!doctype html>
+{%load static%}
+<!DOCTYPE html>
 <header>
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/mail.css' rel='stylesheet'>
-    <title>
-        faculty of computer science and artificial intelligence
-    </title>
-    <link rel="stylesheet" href="home.css">
+  <link
+    href="https://unpkg.com/css.gg@2.0.0/icons/css/mail.css"
+    rel="stylesheet"
+  />
+  <title>faculty of computer science and artificial intelligence</title>
+  <link rel="stylesheet" href="{%static 'css/home.css'%}" />
 </header>
 
 <body>
-    <img class="img1" src="images/Cairo_University_Crest.png" alt="">
-    <img class="img2" src="images/faculty_logo-removebg-preview.png" alt="">
-    <div class=" bg">
+  <img class="img1" src="{%static 'images/Cairo_University_Crest.png'%}" />
+  <img
+    class="img2"
+    src="{%static 'images/faculty_logo-removebg-preview.png'%}"
+    alt=""
+  />
+  <div class="bg"></div>
+  <div>
+    <button class="but">
+      contact us <i class="gg-mail" style="padding: 2%"></i>
+    </button>
+  </div>
+
+  <div id="tit">
+    <h1 style="font-size: 35px">
+      <strong>
+        <center>
+          faculty of computer science<br />
+          and <br />
+          artificial intelligence
+        </center>
+      </strong>
+      <br />
+    </h1>
+
+    <div class="all">
+      <div class="links link1">
+        <a href="login"
+          ><b
+            style="
+              text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000,
+                0px 0px 10px #000000, 0px 0px 20px #000000;
+            "
+            >student affairs</b
+          >
+        </a>
+      </div>
+      <div class="links link2">
+        <a href="#">
+          <b
+            style="
+              text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000,
+                0px 0px 10px #000000, 0px 0px 20px #000000;
+            "
+            >human resources</b
+          ></a
+        >
+      </div>
+      <div class="links link3">
+        <a href="#">
+          <b
+            style="
+              text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000,
+                0px 0px 10px #000000, 0px 0px 20px #000000;
+            "
+            >laboratry tracking</b
+          ></a
+        >
+      </div>
+      <div class="links link4">
+        <a href="#">
+          <b
+            style="
+              text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000,
+                0px 0px 10px #000000, 0px 0px 20px #000000;
+            "
+            >higher studies</b
+          ></a
+        >
+      </div>
     </div>
-    <div>
-        <button class="but">contact us <i class="gg-mail" style="padding: 2%;"></i> </button>
-    </div>
-
-    <div id="tit">
-        <h1 style="font-size:35px"><strong>
-                <center>faculty of computer science<br> and <br> artificial intelligence </center>
-            </strong> <br> </h1>
-
-        <div class="all">
-            <div class="links link1"><a href="login.html"><b
-                        style=" text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000, 0px 0px 10px #000000,0px 0px 20px #000000;">student
-                        affairs</b> </a> </div>
-            <div class="links link2"><a href="#"> <b
-                        style=" text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000, 0px 0px 10px #000000,0px 0px 20px #000000;">human
-                        resources</b></a> </div>
-            <div class="links link3"><a href="#"> <b
-                        style=" text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000, 0px 0px 10px #000000,0px 0px 20px #000000;">laboratry
-                        tracking</b></a> </div>
-            <div class="links link4"><a href="#"> <b
-                        style=" text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000, 0px 0px 10px #000000,0px 0px 20px #000000;">higher
-                        studies</b></a> </div>
-        </div>
-
-    </div>
-
-
-
+  </div>
 </body>

@@ -1,0 +1,71 @@
+{%extends 'menu.html'%}
+{%block content%}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    
+    <link rel="stylesheet" href="{%static 'css/edit.css'%}">
+    <title> Edit student's data </title>
+    
+</head>
+
+
+ 
+  <br><br><br><br><br><br> <br>
+
+  <body>
+    <div class="container">
+      <div class="title">Edit student info</div>
+      <div class="content">
+        <form action="editstudent">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">ID</span>
+              <input type="text" placeholder="Enter student's ID" id="id">
+            </div>
+            <div class="input-box">
+              <span class="details">name</span>
+              <input type="text" placeholder="Enter student's name" id="name">
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input type="text" placeholder="Enter student's number" id="number">
+            </div>
+            <div class="input-box">
+              <span class="details">Email address</span>
+              <input type="text" placeholder="Enter student's Email" id="email">
+            </div>
+            <div class="input-box">
+              <span class="details">Address</span>
+              <input type="text" placeholder="Enter student's Address" id="address">
+            </div>
+            <div class="input-box">
+              <label>level</label>
+              <input type="number" placeholder="Enter student's level" id="level" />
+            </div>
+            <div class="input-box">
+              <label>GPA</label>
+              <input type="number" placeholder="Enter student's GPA" id="gpa">
+            </div>
+
+            <!-- -->
+          </div>
+
+          <div class="button">
+            <input type="submit" value="Edit" id="edit">
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="{%static 'java/editStudent.js'%}"></script>
+  </body>
+  </main>
+  <footer>
+    &copy; all rights are reserved to FCAI-CU
+  </footer>
+
+</html>
+{%endblock%}

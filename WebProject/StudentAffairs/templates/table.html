@@ -1,66 +1,18 @@
+{% extends 'menu.html'%}
+{%block content%}
+{%load static%}
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Students</title>
-    <link rel="stylesheet" href="mystyle.css">
+    
+   <title>Display Students</title>
+   <link rel="stylesheet" href="{%static 'css/mystyle.css'%}">
 
 
-</head>
-
-<body>
-
-    <nav class="nav">
-        <div class="logo"><a href="navpage v2.html"> students affairs</a> </div>
-        <ul>
-            <li><a href="user.html">user</a></li>
-            <li><a href="Add student.html">add student</a></li>
-            <li><a href="delete.html">delete student</a></li>
-            <li><a href="edit student.html">edit student info</a></li>
-            <li><a href="table.html">display students</a></li>
-            <li><a href="New Department.html">new department</a></li>
-        </ul>
-        <a href="login.html" class="logout" id ="logout">logout</a>
-
-        <div class="btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </nav>
-    <div class="menu">
-        <li><a href="user.html">user</a></li>
-        <li><a href="Add student.html">add student</a></li>
-        <li><a href="delete.html">delete student</a></li>
-        <li><a href="edit student.html">edit student info</a></li>
-        <li><a href="table.html">display students</a></li>
-        <li><a href="New Department.html">new department</a></li>
-        <li><a href="login.html" class="logout" id = "logout2">logout</a></li>
-    </div>
-    <script>
-        const btn = document.querySelector(".btn")
-        const icon = document.querySelector(".btn i")
-        const menu = document.querySelector(".menu")
-
-        btn.onclick = function () {
-            menu.classList.toggle("op")
-            const open = menu.classList.contains('op')
-
-            icon.classList = open
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-
-    </script>
-</body>
-
+    
+</head>   
 
 <body class="main">
     <main class="table">
@@ -94,5 +46,6 @@
 <footer>
     &copy; all rights are reserved to FCAI
 </footer>
-<script src="table.js"></script>
+<script src="{%static 'java/table.js'%}"></script>
 </html>
+{%endblock%}
