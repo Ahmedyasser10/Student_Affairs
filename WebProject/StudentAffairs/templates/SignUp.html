@@ -1,4 +1,4 @@
-{%load static%}
+{%block content%} {%load static%}
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,17 +19,18 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
 
     <div class="wrapper">
-      <form action="login">
+      <form action="login" method="POST">
+        {% csrf_token %}
         <div class="title">Sign Up</div>
 
         <div class="form">
           <div class="input_field">
             <label for="id">National ID</label>
-            <input type="text" class="input" id="nid" />
+            <input type="text" class="input" id="nid" name="id" />
           </div>
           <div class="input_field">
             <label for="full-name">Full Name</label>
-            <input type="text" class="input" id="fullname" />
+            <input type="text" class="input" id="fullname" name="fullname" />
           </div>
 
           <div class="input_field">
@@ -39,31 +40,25 @@
 
           <div class="input_field">
             <label for="pass">Password</label>
-            <input type="password" id="password" />
+            <input type="password" id="password" name="pass" />
           </div>
 
           <div class="input_field">
             <label for="confirm">Confirm Password</label>
-            <input type="password" id="confirmpass" />
+            <input type="password" id="confirmpass" name="cpass" />
           </div>
 
           <div class="input_field">
             <label>Phone number</label>
-            <input type="text" name="number" id="phonenum" />
+            <input type="text" id="phonenum" name="phone" />
           </div>
 
           <div class="input_field">
             <label>Date of birth</label>
-            <input type="date" name="Date" required />
+            <input type="date" required name="date" />
           </div>
           <div class="input">
-            <input
-              type="submit"
-              value="Sign Up"
-              class="btn"
-              id="submit-btn"
-              action="navpage v2.html"
-            />
+            <input type="submit" value="Sign Up" class="btn" id="submit-btn" />
           </div>
         </div>
       </form>
@@ -79,3 +74,4 @@
   <br /><br /><br /><br />
   <footer align="center">&copy; all rights are reserved to FCAI-CU</footer>
 </html>
+{%endblock%}

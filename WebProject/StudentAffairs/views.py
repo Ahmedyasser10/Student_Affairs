@@ -4,6 +4,8 @@ from StudentAffairs.models import students
 from django.http import HttpResponse
 from datetime import date
 
+from .models import Admin
+
 
 def Add(request):
     if request.method == 'POST':
@@ -46,8 +48,18 @@ def edit(request):
     return render(request,'editstudent.html',{})
 
 def login(request):
+    if request.method == 'POST':
+        ID = request.POST['id']
+        fname = request.POST['fullname']
+        uname = request.POST['Username']
+        Pass = request.POST['pass']
+        CPass = request.POST['cpass']
+        pnumber = request.POST['phone']
+        D = request.POST['date']
+        admin = Admin(NationalId = ID, FullName = fname , UserName = uname , Password = Pass, ConfirmPassword = CPass, PhoneNumber = pnumber, Date = D)
+        admin.save()
     template = loader.get_template('login.html')
-    return HttpResponse(template.render())
+    return render(request,'login.html',{})
 
 
 def nav(request):
@@ -80,8 +92,8 @@ def display(request):
 
 def signup(request):
     template = loader.get_template('SignUp.html')
-    return HttpResponse(template.render())
-
+            
+    return render(request,'SignUp.html',{})
 
 def home(request):
     template = loader.get_template('home.html')

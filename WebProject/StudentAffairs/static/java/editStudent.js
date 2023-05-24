@@ -49,30 +49,37 @@ button.addEventListener('click', function (event) {
 
     if (ID.value === "" || email.value === "" || studentName.value === "" || phoneNumber.value === "" || address.value === "" || level.value === "") {
         alert('Data is not compelete');
+        event.preventDefault();
         return false;
     }
     if (!hasOnlyDigits(ID.value) || ID.value.length < 5 || ID.value.length > 20) {
         alert('Enter a valid ID contains only numbers between 5 and 20 in length');
+        event.preventDefault();
         return false;
     }
     if (!isValidEmail(email.value)) {
         alert('Enter a valid email');
+        event.preventDefault();
         return fasle;
     }
     if (!isValidPhoneNumber(phoneNumber.value)) {
         alert('Enter a Valid phone number');
+        event.preventDefault();
         return false;
     }
     if (!isValidName(studentName.value)) {
         alert('Enter a valid Name contains only characters separated by space');
+        event.preventDefault();
         return false;
     }
     if (level.value < 1 || level.value > 4) {
         alert('Enter a valid level between 1 and 4');
+        event.preventDefault();
         return false;
     }
     if (gpa.value < 1 || gpa.value > 4) {
         alert('Enter a valid GPA between 1 and 4');
+        event.preventDefault();
         return false;
     }
     

@@ -54,35 +54,43 @@ button.addEventListener('click', function (event) {
 
     if (ID.value === "" || email.value === "" || studentName.value === "" || phoneNumber.value === "" || address.value === "" || level.value === "" || GPA.value === "") {
         alert('Data is not compelete');
+        event.preventDefault();
         return false;
     }
     if (!hasOnlyDigits(ID.value) || ID.value.length < 5 || ID.value.length > 20) {
         alert('Enter a valid ID contains only numbers between 5 and 20 in length');
+        event.preventDefault();
         return false;
     }
     if (!isValidEmail(email.value)) {
         alert('Enter a valid email');
+        event.preventDefault();
         return fasle;
     }
     if (!isValidPhoneNumber(phoneNumber.value)) {
         alert('Enter a Valid phone number');
+        event.preventDefault();
         return false;
     }
     if (!isValidName(studentName.value)) {
         alert('Enter a valid Name contains only characters between 5 and 20 in length');
+        event.preventDefault();
         return false;
     }
     if (level.value < 1 || level.value > 4) {
         alert('Enter a valid level between 1 and 4');
+        event.preventDefault();
         return false;
     }
     if ((level.value <= 2) && (departmentSelect.value !== "General")) {
         alert("this student can't be in a depatment");
+        event.preventDefault();
         return false;
 
     }
     if ((level.value > 2) && (departmentSelect.value === "General")) {
         alert("this student must have depatment");
+        event.preventDefault();
         return false;
     }
     return true;
@@ -90,33 +98,34 @@ button.addEventListener('click', function (event) {
 });
 
 
-logOut.onclick = function () {
-    for (i = 0; i < localStorage.length; i++) {
-      let k = localStorage.key(i);
-      if (JSON.parse(localStorage.getItem(k)).type === 0)
-        continue;
+// logOut.onclick = function () {
+//     for (i = 0; i < localStorage.length; i++) {
+//       let k = localStorage.key(i);
+//       if (JSON.parse(localStorage.getItem(k)).type === 0)
+//         continue;
   
-      let x = JSON.parse(localStorage.getItem(k));
-      if (x.logedin === 1) {
-        x.logedin = 0;
-        localStorage.setItem(k, JSON.stringify(x));
-        break;
-      }
-    }
-  }
+//       let x = JSON.parse(localStorage.getItem(k));
+//       if (x.logedin === 1) {
+//         x.logedin = 0;
+//         localStorage.setItem(k, JSON.stringify(x));
+//         break;
+//       }
+//     }
+//   }
 
-logOut2.onclick = function () {
-    for (i = 0; i < localStorage.length; i++) {
-      let k = localStorage.key(i);
-      if (JSON.parse(localStorage.getItem(k)).type === 0)
-        continue;
+// logOut2.onclick = function () {
+//     for (i = 0; i < localStorage.length; i++) {
+//       let k = localStorage.key(i);
+//       if (JSON.parse(localStorage.getItem(k)).type === 0)
+//         continue;
   
-      let x = JSON.parse(localStorage.getItem(k));
-      if (x.logedin === 1) {
-        x.logedin = 0;
-        localStorage.setItem(k, JSON.stringify(x));
-        break;
-      }
-    }
-  }
+//       let x = JSON.parse(localStorage.getItem(k));
+//       if (x.logedin === 1) {
+//         x.logedin = 0;
+//         localStorage.setItem(k, JSON.stringify(x));
+//         break;
+//       }
+//     }
+//   }
+
   

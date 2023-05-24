@@ -12,50 +12,54 @@ submitBtn.addEventListener('click', function (event) {
 
     if (!idRegex.test(ID.value)) {
         alert("Invalid ID");
+        event.preventDefault();
         return false;
     }
     if (!nameRegex.test(Fullname.value)) {
         alert("invalid Name");
+        event.preventDefault();
         return false;
     }
     if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
         alert("this student can't be in a department");
+        event.preventDefault();
         return false;
 
     }
     if ((Level.value > 2) && (departmentSelect.value === "General")) {
         alert("this student must have department");
+        event.preventDefault();
         return false;
     }
 
 });
 
-logOut.onclick = function () {
-    for (i = 0; i < localStorage.length; i++) {
-        let k = localStorage.key(i);
-        if (JSON.parse(localStorage.getItem(k)).type === 0)
-            continue;
+// logOut.onclick = function () {
+//     for (i = 0; i < localStorage.length; i++) {
+//         let k = localStorage.key(i);
+//         if (JSON.parse(localStorage.getItem(k)).type === 0)
+//             continue;
 
-        let x = JSON.parse(localStorage.getItem(k));
-        if (x.logedin === 1) {
-            x.logedin = 0;
-            localStorage.setItem(k, JSON.stringify(x));
-            break;
-        }
-    }
-}
+//         let x = JSON.parse(localStorage.getItem(k));
+//         if (x.logedin === 1) {
+//             x.logedin = 0;
+//             localStorage.setItem(k, JSON.stringify(x));
+//             break;
+//         }
+//     }
+// }
 
-logOut2.onclick = function () {
-    for (i = 0; i < localStorage.length; i++) {
-        let k = localStorage.key(i);
-        if (JSON.parse(localStorage.getItem(k)).type === 0)
-            continue;
+// logOut2.onclick = function () {
+//     for (i = 0; i < localStorage.length; i++) {
+//         let k = localStorage.key(i);
+//         if (JSON.parse(localStorage.getItem(k)).type === 0)
+//             continue;
 
-        let x = JSON.parse(localStorage.getItem(k));
-        if (x.logedin === 1) {
-            x.logedin = 0;
-            localStorage.setItem(k, JSON.stringify(x));
-            break;
-        }
-    }
-}
+//         let x = JSON.parse(localStorage.getItem(k));
+//         if (x.logedin === 1) {
+//             x.logedin = 0;
+//             localStorage.setItem(k, JSON.stringify(x));
+//             break;
+//         }
+//     }
+// }

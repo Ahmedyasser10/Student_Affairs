@@ -85,6 +85,6 @@ submitBtn.addEventListener('click', function (event) {
   console.log("Success");
 
   window.location.replace(
-    "navpage v2.html"
+    "navpagev2"
   );
 });
