@@ -49,7 +49,8 @@ button.addEventListener('click', function (event) {
     /*
     validate data input here
     */
-    event.preventDefault();
+    
+
 
     if (ID.value === "" || email.value === "" || studentName.value === "" || phoneNumber.value === "" || address.value === "" || level.value === "" || GPA.value === "") {
         alert('Data is not compelete');
@@ -84,29 +85,7 @@ button.addEventListener('click', function (event) {
         alert("this student must have depatment");
         return false;
     }
-
-    for (let i = 0; i < localStorage.length; ++i) {
-        let k = localStorage.key(i);
-        let x = JSON.parse(localStorage.getItem(k));
-        if (x.type === 1) // check if the current Registerer is a Student
-            continue;
-        if (x.id === ID.value) {
-            alert('ID is already used');
-            return false;
-        }
-        if (x.email === email.value) {
-            alert('email is already used');
-            return false;
-        }
-        if (x.phone === phoneNumber.value) {
-            alert('phone number is already used');
-            return false;
-        }
-
-    }
-    let s = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, date.value, 0, departmentSelect.value, GPA.value);
-    localStorage.setItem( localStorage.length + 1, JSON.stringify(s));
-    alert('A new student is successfuly added');
+    return true;
 
 });
 

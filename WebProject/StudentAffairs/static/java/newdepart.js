@@ -7,8 +7,6 @@ const logOut = document.getElementById("logout");
 const logOut2 = document.getElementById("logout2");
 
 submitBtn.addEventListener('click', function (event) {
-    event.preventDefault();
-
     let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
     let idRegex = /^\d{8}$/;
 
@@ -21,39 +19,14 @@ submitBtn.addEventListener('click', function (event) {
         return false;
     }
     if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
-        alert("this student can't be in a depatment");
+        alert("this student can't be in a department");
         return false;
 
     }
     if ((Level.value > 2) && (departmentSelect.value === "General")) {
-        alert("this student must have depatment");
+        alert("this student must have department");
         return false;
     }
-
-    let flag = false;
-    for (let i = 0; i < localStorage.length; i++) {
-        let k = localStorage.key(i);
-        let x = JSON.parse(localStorage.getItem(k));
-        if (x.type === 1) {
-            continue;
-        }
-        if (x.id === ID.value && x.name === Fullname.value && x.level === Level.value) {
-            flag = true;
-            x.depart = departmentSelect.value;
-            localStorage.setItem(k, JSON.stringify(x));
-            break;
-        }
-    }
-
-    if (!flag) {
-        console.log("no\n")
-        alert("This student is not found.");
-        return false;
-    }
-    else {
-        alert("Student's department is Changed successfuly");
-    }
-
 
 });
 

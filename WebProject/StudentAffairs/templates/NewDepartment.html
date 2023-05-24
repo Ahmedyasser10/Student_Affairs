@@ -17,22 +17,22 @@
     <div class="title"> New depaartment</div>
 
     <div class="content">
-      <form action="#">
+      <form action="NewDepartment" method="post">{% csrf_token%}
         <div class="user-details">
           <div class="input-box">
             <span class="details">ID</span>
-            <input type="text" placeholder="Enter student's ID" id="id">
+            <input type="text" placeholder="Enter student's ID" id="id" name="id">
           </div>
           <div class="input-box">
             <span class="details">name</span>
-            <input type="text" placeholder="Enter student's name" id="fullname">
+            <input type="text" placeholder="Enter student's name" id="fullname" name="name">
           </div>
 
 
 
           <div class="input-box">
             <label>level</label>
-            <input type="number" placeholder="Enter student's level" id="level" />
+            <input type="number" placeholder="Enter student's level" id="level" name ="lvl"/>
           </div>
           <div class="input-box">
             <label>department</label>
@@ -44,7 +44,7 @@
                 padding-left: 15px;
                 border: 1px solid #ccc;
                 border-bottom-width: 2px;
-                transition: all 0.3s ease;">
+                transition: all 0.3s ease;" name="depart">
               <option value="General">General</option>
               <option value="IS">Information System</option>
               <option value="CS">Computer Science</option>

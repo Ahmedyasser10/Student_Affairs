@@ -47,8 +47,6 @@ function isValidName(name) {
 button.addEventListener('click', function (event) {
     let key;
 
-    event.preventDefault();
-
     if (ID.value === "" || email.value === "" || studentName.value === "" || phoneNumber.value === "" || address.value === "" || level.value === "") {
         alert('Data is not compelete');
         return false;
@@ -77,42 +75,8 @@ button.addEventListener('click', function (event) {
         alert('Enter a valid GPA between 1 and 4');
         return false;
     }
-    let flag = 0;
-    for (let i = 0; i < localStorage.length; ++i) {
+    
 
-        let k = localStorage.key(i);
-        let x = JSON.parse(localStorage.getItem(k));
-
-        if (x.type === 1) { // check if the current Registerer is a Student
-            continue;
-        }
-        if (ID.value === x.id) {
-            flag = 1;
-            key = k;
-        }
-
-        if (email.value === x.email && ID.value !== x.id) {
-
-            alert('Email is already used');
-            return false;
-        }
-        if (phoneNumber.value === x.phone && ID.value !== x.id) {
-            alert('Phone number is already used');
-            return false;
-        }
-
-
-    }
-
-    if (!flag) {
-        alert('Stuend is not found');
-        return false;
-    } else {
-        let last = JSON.parse(localStorage.getItem(key)) ;
-        let update = new Student(ID.value, studentName.value, phoneNumber.value, email.value, address.value, level.value, gpa.value, 0 , last.depart );
-        localStorage.setItem(key, JSON.stringify(update));
-        alert('Student\'s information has been edit successfully');
-    }
 
 });
 

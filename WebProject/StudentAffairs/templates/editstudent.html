@@ -20,35 +20,35 @@
     <div class="container">
       <div class="title">Edit student info</div>
       <div class="content">
-        <form action="editstudent">
+        <form action="editstudent" method="post"> {% csrf_token%}
           <div class="user-details">
             <div class="input-box">
               <span class="details">ID</span>
-              <input type="text" placeholder="Enter student's ID" id="id">
+              <input type="text" placeholder="Enter student's ID" id="id" name="id">
             </div>
             <div class="input-box">
               <span class="details">name</span>
-              <input type="text" placeholder="Enter student's name" id="name">
+              <input type="text" placeholder="Enter student's name" id="name" name="name">
             </div>
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="text" placeholder="Enter student's number" id="number">
+              <input type="text" placeholder="Enter student's number" id="number" name="number">
             </div>
             <div class="input-box">
               <span class="details">Email address</span>
-              <input type="text" placeholder="Enter student's Email" id="email">
+              <input type="text" placeholder="Enter student's Email" id="email" name="email">
             </div>
             <div class="input-box">
               <span class="details">Address</span>
-              <input type="text" placeholder="Enter student's Address" id="address">
+              <input type="text" placeholder="Enter student's Address" id="address" name ="address">
             </div>
             <div class="input-box">
               <label>level</label>
-              <input type="number" placeholder="Enter student's level" id="level" />
+              <input type="number" placeholder="Enter student's level" id="level" name="lvl" />
             </div>
             <div class="input-box">
               <label>GPA</label>
-              <input type="number" placeholder="Enter student's GPA" id="gpa">
+              <input type="number" placeholder="Enter student's GPA" id="gpa" name="gpa">
             </div>
 
             <!-- -->
