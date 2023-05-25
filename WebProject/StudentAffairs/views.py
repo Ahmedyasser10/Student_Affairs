@@ -4,7 +4,9 @@ from StudentAffairs.models import students
 from django.http import HttpResponse
 from datetime import date
 from django.http import JsonResponse
-from .models import Admin
+from .models import Admin ,students
+import json
+from django.db.models import Q
 
 
 def Add(request):
@@ -19,7 +21,7 @@ def Add(request):
         dob = request.POST.get('dob')
         gender = request.POST.get('gender','')
         address = request.POST.get('address','')
-        student = students(id=student_id, name=name, GPA=gpa, email=email,dob=dob, phonenumber=phone_number, depart=department, lvl=level, s_type=gender, address=address)
+        student = students(student_id=student_id, name=name, GPA=gpa, email=email,dob=dob, phonenumber=phone_number, depart=department, lvl=level, s_type=gender, address=address)
         student.save() 
     return render(request,'Addstudent.html',{})
 
@@ -80,7 +82,7 @@ def user(request):
 def dep(request):
     if request.method == "POST":
         IDs=request.POST['id']
-
+        
         updated_student=students.objects.get(id=IDs)
         names=request.POST['name']
         lvls=request.POST['lvl']
@@ -91,8 +93,10 @@ def dep(request):
 
 
 def display(request):
+    
+
     template = loader.get_template('table.html')
-    return render(request , 'table.html' , {}) 
+    return render(request , 'table.html' , {} )
 
 def home(request):
     template = loader.get_template('home.html')
@@ -109,6 +113,21 @@ def getprofiles(request):
 
 
 def getstudents (request):
+
+    if request.method == "POST":
+        searchFilter = request.POST.get('searchInput' , '')
+        Data = students.objects.filter(
+            Q(student_id__startswith=searchFilter) |
+            Q(name__startswith=searchFilter) |
+            Q(lvl__startswith=searchFilter) | 
+            Q(depart__startswith=searchFilter) |
+            Q(GPA__startswith=searchFilter)
+
+        )
+        return JsonResponse({"Data": list(Data.values())})
+        # Data = students.objects.all()
+        # return JsonResponse({"Data": list(Data.values())})
+    
     Data = students.objects.all()
     return JsonResponse({"Data": list(Data.values())})
     

@@ -8,7 +8,8 @@
 <head>
     
    <title>Display Students</title>
-   <link rel="stylesheet" href="{%static 'css/mystyle.css'%}">
+   
+   <link rel="stylesheet" href="{%static 'css/mystyle.css' %}">
 
 
     
@@ -18,9 +19,18 @@
     <main class="table">
         <section class="table__header">
             <h1>FCAI Students</h1>
-            <div class="input-group">
-                <img src="images/search.png" alt="">
-            </div>
+            <!-- <div > -->
+                <form action="table" class="input-group" method="post" id = "myForm" onsubmit=  "submitForm(event)">
+                    {% csrf_token %}
+                    <input type="text" placeholder="search by name" id="search" name = "searchInput"  >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg" alt="">
+                    <div class="input">
+
+                    <input type="submit" value="search" class="btn" id="submit-btn" />
+
+                    </div>
+                </form>
+            <!-- </div> -->
         </section>
         <section class="table__body">
             <table id = "form">
@@ -47,18 +57,38 @@
     &copy; all rights are reserved to FCAI
 </footer>
 <script>
-    window.onload = function(){
-        console.log("hello world" ) ;
-     $(document).ready(function(){
-      $.ajax({
-        type: "GET",
-        url: "{% url 'getstudents' %}",
-        success: function(response) {
-            var studentsData = response.Data;
 
+
+
+  function submitForm(event) {
+    event.preventDefault();
+        const s = document.getElementById("search");
+        console.log(s.value) ;
+        var table = document.getElementById("form");
+        var rows = table.getElementsByTagName("tr");
+        for (var i = rows.length - 1; i > 0; i--) {
+            table.deleteRow(i);
+        }
+        if (s.value === null)
+            s.value = "" ;
+        console.log(s.value) ;
+        console.log(22);
+     $(document).ready(function(){
+
+        $.ajax({
+        type: "POST",
+        url: "{% url 'getstudents' %}",
+        data: {
+            searchInput: s.value,
+            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken ]').val() ,
+        },
+        success: function(response) {
+
+            var studentsData = response.Data;
+            console.log(s.value)  ;
             for (var i = 0; i < studentsData.length; i++) {
-                
                 var cur = studentsData[i];
+
 
                 var list = document.getElementById("form");
                 var newRow = document.createElement("tr");
@@ -72,7 +102,7 @@
                 newRow.appendChild(cell2);
 
                 var cell3 = document.createElement("td");
-                cell3.textContent = cur.phonenumber;
+                cell3.textContent = cur.student_id;
                 newRow.appendChild(cell3);
 
                 var cell4 = document.createElement("td");
@@ -105,6 +135,67 @@
       });
     });
 }
+
+
+window.onload = function(){
+        console.log("hello world" ) ;
+     $(document).ready(function(){
+      $.ajax({
+        type: "GET",
+        url: "{% url 'getstudents' %}",
+        success: function(response) {
+            var studentsData = response.Data;
+
+            for (var i = 0; i < studentsData.length; i++) {
+                
+                var cur = studentsData[i];
+
+                var list = document.getElementById("form");
+                var newRow = document.createElement("tr");
+
+                var cell1 = document.createElement("td");
+                cell1.textContent = i + 1;
+                newRow.appendChild(cell1);
+
+                var cell2 = document.createElement("td");
+                cell2.textContent = cur.name;
+                newRow.appendChild(cell2);
+
+                var cell3 = document.createElement("td");
+                cell3.textContent = cur.student_id;
+                newRow.appendChild(cell3);
+
+                var cell4 = document.createElement("td");
+                cell4.textContent = cur.lvl;
+                newRow.appendChild(cell4);
+
+                var cell5 = document.createElement("td");
+                cell5.textContent = cur.GPA;
+                newRow.appendChild(cell5);
+
+                var cell6 = document.createElement("td");
+                cell6.textContent = cur.depart;
+                newRow.appendChild(cell6);
+
+                var cell7 = document.createElement("td");
+                var status = document.createElement("p");
+                status.classList.add("status", "active");
+                status.textContent = "Active";
+                cell7.appendChild(status);
+                newRow.appendChild(cell7);
+
+                list.appendChild(newRow);
+            }
+            console.log("hello world") ;
+
+        },
+        error: function () {
+              alert("An Error Occurred");
+            },
+      });
+    });
+}
+
 </script>
 <script src="{%static 'java/table.js'%}"></script>
 </html>

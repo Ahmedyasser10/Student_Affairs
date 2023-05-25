@@ -10,9 +10,10 @@ class students(models.Model):
     s_type=models.CharField(max_length=30,null=False)
     dob = models.DateField(default='2000-01-01')    
     depart=models.CharField(max_length=30,null=True)
+    student_id = models.IntegerField( default= 0 )
 
-    # def __str__(self):
-    #     return self.ID
+    def __str__(self):
+        return self.name
 
 class Admin(models.Model):
     NationalId = models.CharField(max_length= 20, unique=True)

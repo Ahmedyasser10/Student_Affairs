@@ -58,17 +58,17 @@ const logOut2 = document.getElementById("logout2");
 //   }
 // }
 
-logOut2.onclick = function () {
-  for (i = 0; i < localStorage.length; i++) {
-      let k = localStorage.key(i);
-      if (JSON.parse(localStorage.getItem(k)).type === 0)
-          continue;
+// logOut2.onclick = function () {
+//   for (i = 0; i < localStorage.length; i++) {
+//       let k = localStorage.key(i);
+//       if (JSON.parse(localStorage.getItem(k)).type === 0)
+//           continue;
 
-      let x = JSON.parse(localStorage.getItem(k));
-      if (x.logedin === 1) {
-          x.logedin = 0;
-          localStorage.setItem(k, JSON.stringify(x));
-          break;
-      }
-  }
-}
+//       let x = JSON.parse(localStorage.getItem(k));
+//       if (x.logedin === 1) {
+//           x.logedin = 0;
+//           localStorage.setItem(k, JSON.stringify(x));
+//           break;
+//       }
+//   }
+// }
