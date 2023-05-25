@@ -69,20 +69,28 @@
     <script>
       const submitbtn = document.querySelector("#submit-btn");
       const id = document.getElementById("nid");
+      const user = document.getElementById("username");
       let flag = 1;
       submitbtn.addEventListener("click", function (event) {
         flag = 1;
-        event.preventDefault(); // Prevent the default form submission behavior
+        event.preventDefault();
 
         $(document).ready(function () {
           $.ajax({
             type: "GET",
-            url: "{% url 'getprofiles' %}", // Update the URL here
+            url: "{% url 'getprofiles' %}",
             success: function (response) {
               for (var key in response.Data) {
                 if (id.value == response.Data[key].NationalId) {
                   flag = 0;
                   alert("ID is already used");
+                  break;
+                }
+              }
+              for (var key in response.Data) {
+                if (user.value == response.Data[key].UserName) {
+                  alert("Username is already used");
+                  flag = 0;
                   break;
                 }
               }

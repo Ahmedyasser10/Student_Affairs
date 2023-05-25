@@ -58,13 +58,18 @@ def login(request):
         D = request.POST['date']
         admin = Admin(NationalId = ID, FullName = fname , UserName = uname , Password = Pass, ConfirmPassword = CPass, PhoneNumber = pnumber, Date = D)
         admin.save()
-    template = loader.get_template('login.html')
     return render(request,'login.html',{})
 
 
 def nav(request):
-    template = loader.get_template('navpagev2.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        uname = request.POST['Username']
+        x = Admin.objects.get(UserName = uname)
+        admin = Admin(NationalId = x.NationalId, FullName = x.FullName , UserName = x.UserName , Password = x.Password, ConfirmPassword = x.ConfirmPassword, PhoneNumber = x.PhoneNumber, Date = x.Date, logedIN = 1)
+        x.delete()
+        admin.save()
+    return render(request,'navpagev2.html',{})
+
 
 
 def user(request):

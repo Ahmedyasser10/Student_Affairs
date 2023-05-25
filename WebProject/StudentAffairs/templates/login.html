@@ -1,10 +1,12 @@
-{%load static%}
+{%block content%%} {%load static%}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Home page" />
     <title>Students Affairs Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{%static 'css/login.css'%}" />
   </head>
 
@@ -24,7 +26,8 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
     <h1>Welcome to FCAI-CU</h1>
 
-    <form align="middle" action="navpagev2">
+    <form align="middle" action="navpagev2" method="POST" id="myForm">
+      {%csrf_token%}
       <div>
         <input
           id="username"
@@ -62,6 +65,43 @@
         <a href="SignUp" style="color: rgb(194, 155, 155)"> Sign up </a>
       </p>
     </div>
+    <script>
+      const submitbtn = document.querySelector("#login-btn");
+      const user = document.getElementById("username");
+      const pass = document.getElementById("password");
+      let flag;
+      submitbtn.addEventListener("click", function (event) {
+        flag = 0;
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        $(document).ready(function () {
+          $.ajax({
+            type: "GET",
+            url: "{% url 'getprofiles' %}", // Update the URL here
+            success: function (response) {
+              for (var key in response.Data) {
+                if (user.value == response.Data[key].UserName) {
+                  if (pass.value == response.Data[key].Password) {
+                    flag = 1;
+                    break;
+                  }
+                }
+              }
+
+              if (flag == 1) {
+                alert("Successfull Login");
+                document.getElementById("myForm").submit();
+              } else {
+                alert("Wrong Username or Password");
+              }
+            },
+            error: function () {
+              alert("An Error Occurred");
+            },
+          });
+        });
+      });
+    </script>
 
     <script src="{%static 'java/login.js'%}"></script>
   </body>
@@ -70,3 +110,4 @@
     &copy; all rights are reserved to FCAI-CU
   </footer>
 </html>
+{%endblock%}
