@@ -19,3 +19,4 @@ class Admin(models.Model):
     ConfirmPassword = models.CharField(max_length=20)
     PhoneNumber = models.CharField(max_length=11)
     Date = models.DateField(default='2000-01-01')
+    logedIN = models.BooleanField(default=False, null=True)

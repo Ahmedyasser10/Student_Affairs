@@ -6,6 +6,8 @@
     <meta name="description" content="Home page" />
     <title>Students Affairs Sign Up</title>
     <link rel="stylesheet" href="{%static 'css/SignUp.css'%}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -19,7 +21,7 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
 
     <div class="wrapper">
-      <form action="login" method="POST">
+      <form action="login" method="POST" id="myForm">
         {% csrf_token %}
         <div class="title">Sign Up</div>
 
@@ -64,7 +66,40 @@
       </form>
     </div>
 
+    <script>
+      const submitbtn = document.querySelector("#submit-btn");
+      const id = document.getElementById("nid");
+      let flag = 1;
+      submitbtn.addEventListener("click", function (event) {
+        flag = 1;
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        $(document).ready(function () {
+          $.ajax({
+            type: "GET",
+            url: "{% url 'getprofiles' %}", // Update the URL here
+            success: function (response) {
+              for (var key in response.Data) {
+                if (id.value == response.Data[key].NationalId) {
+                  flag = 0;
+                  alert("ID is already used");
+                  break;
+                }
+              }
+
+              if (flag == 1) {
+                document.getElementById("myForm").submit();
+              }
+            },
+            error: function () {
+              alert("An Error Occurred");
+            },
+          });
+        });
+      });
+    </script>
     <script src="{%static 'java/signup.js'%}"></script>
+
     <div>
       <button class="but">
         contact us <i class="gg-mail" style="padding: 2%"></i>

@@ -5,20 +5,20 @@ const password = document.querySelector("#password");
 // Get the submit button
 const submitBtn = document.querySelector('#login-btn');
 
-window.onload = function () {
-  for (i = 0; i < localStorage.length; i++) {
-    let k = localStorage.key(i);
-    if (JSON.parse(localStorage.getItem(k)).type === 0)
-      continue;
+// window.onload = function () {
+//   for (i = 0; i < localStorage.length; i++) {
+//     let k = localStorage.key(i);
+//     if (JSON.parse(localStorage.getItem(k)).type === 0)
+//       continue;
 
-    flag = 1;
-    let x = JSON.parse(localStorage.getItem(k));
-    if (x.logedin === 1) {
-      window.location.href = "navpage v2.html";
-      break;
-    }
-  }
-}
+//     flag = 1;
+//     let x = JSON.parse(localStorage.getItem(k));
+//     if (x.logedin === 1) {
+//       window.location.href = "navpage v2.html";
+//       break;
+//     }
+//   }
+// }
 
 
 class User {
@@ -58,20 +58,20 @@ submitBtn.addEventListener('click', function (event) {
 
 
   let flag = 0;
-  for (i = 0; i < localStorage.length; i++) {
-    let k = localStorage.key(i);
-    if (JSON.parse(localStorage.getItem(k)).type === 0)
-      continue;
+  // for (i = 0; i < localStorage.length; i++) {
+  //   let k = localStorage.key(i);
+  //   if (JSON.parse(localStorage.getItem(k)).type === 0)
+  //     continue;
 
-    if (JSON.parse(localStorage.getItem(k)).username === username.value && JSON.parse(localStorage.getItem(k)).password === password.value) {
-      flag = 1;
-      let x = JSON.parse(localStorage.getItem(k));
-      x.logedin = 1;
-      localStorage.setItem(k, JSON.stringify(x));
-      console.log(JSON.parse(localStorage.getItem(k)).logedin);
-      break;
-    }
-  }
+  //   if (JSON.parse(localStorage.getItem(k)).username === username.value && JSON.parse(localStorage.getItem(k)).password === password.value) {
+  //     flag = 1;
+  //     let x = JSON.parse(localStorage.getItem(k));
+  //     x.logedin = 1;
+  //     localStorage.setItem(k, JSON.stringify(x));
+  //     console.log(JSON.parse(localStorage.getItem(k)).logedin);
+  //     break;
+  //   }
+  // }
 
   if (!flag) {
     console.log("no\n")

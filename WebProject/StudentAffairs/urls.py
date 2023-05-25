@@ -11,5 +11,6 @@ urlpatterns = [
     path('NewDepartment', views.dep, name = 'dep'),
     path('table', views.display, name = 'display'),
     path('SignUp', views.signup, name = 'signup'),
+    path('getprofiles', views.getprofiles, name = 'getprofiles'),
     path('', views.home, name = 'home'),
 ]

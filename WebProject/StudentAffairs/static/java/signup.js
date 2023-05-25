@@ -48,6 +48,7 @@ submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
     return false;
   }
+  
   // Check if the required fields are filled
   if (fullname.value.trim() === '' || !nameRegex.test(fullname.value.trim())) {
     alert('Please enter your full name.');
@@ -56,6 +57,7 @@ submitBtn.addEventListener('click', function (event) {
 
     return false;
   }
+  
 
   if (username.value.trim() === '' || username.value.trim().length < 3 || !idRegex.test(username.value)) {
     alert('Username should be 8 characters');
@@ -107,6 +109,7 @@ submitBtn.addEventListener('click', function (event) {
   //     return false;
   //   }
   // }
+
 
 
 });

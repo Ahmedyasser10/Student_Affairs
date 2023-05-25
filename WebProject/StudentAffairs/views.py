@@ -3,7 +3,7 @@ from django.shortcuts import render
 from StudentAffairs.models import students
 from django.http import HttpResponse
 from datetime import date
-
+from django.http import JsonResponse
 from .models import Admin
 
 
@@ -99,5 +99,8 @@ def home(request):
     template = loader.get_template('home.html')
     return HttpResponse(template.render())
 
+def getprofiles(request):
+    Data = Admin.objects.all()
+    return JsonResponse({"Data": list(Data.values())})
 
         
