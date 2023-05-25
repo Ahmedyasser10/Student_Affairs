@@ -6,10 +6,13 @@ class students(models.Model):
     address=models.CharField(max_length=30,null=False)
     email=models.CharField(max_length=30,null=False)
     lvl=models.IntegerField(null=False)
-    GPA=models.IntegerField(null=False)
+    GPA= models.FloatField(null = False)
     s_type=models.CharField(max_length=30,null=False)
     dob = models.DateField(default='2000-01-01')    
     depart=models.CharField(max_length=30,null=True)
+
+    # def __str__(self):
+    #     return self.ID
 
 class Admin(models.Model):
     NationalId = models.CharField(max_length= 20, primary_key= True)
@@ -20,3 +23,5 @@ class Admin(models.Model):
     PhoneNumber = models.CharField(max_length=11)
     Date = models.DateField(default='2000-01-01')
     logedIN = models.BooleanField(default=False, null=True)
+    def __str__(self):
+        return self.FullName

@@ -87,20 +87,24 @@ def dep(request):
 
 def display(request):
     template = loader.get_template('table.html')
-    return HttpResponse(template.render())
-
-
-def signup(request):
-    template = loader.get_template('SignUp.html')
-            
-    return render(request,'SignUp.html',{})
+    return render(request , 'table.html' , {}) 
 
 def home(request):
     template = loader.get_template('home.html')
     return HttpResponse(template.render())
 
+def signup(request):
+    template = loader.get_template('SignUp.html')
+    return render(request,'SignUp.html',{})
+
+
 def getprofiles(request):
     Data = Admin.objects.all()
+    return JsonResponse({"Data": list(Data.values())})
+
+
+def getstudents (request):
+    Data = students.objects.all()
     return JsonResponse({"Data": list(Data.values())})
 
         

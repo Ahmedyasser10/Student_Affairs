@@ -46,6 +46,66 @@
 <footer>
     &copy; all rights are reserved to FCAI
 </footer>
+<script>
+    window.onload = function(){
+        console.log("hello world" ) ;
+     $(document).ready(function(){
+      $.ajax({
+        type: "GET",
+        url: "{% url 'getstudents' %}",
+        success: function(response) {
+            var studentsData = response.Data;
+
+            for (var i = 0; i < studentsData.length; i++) {
+                
+                var cur = studentsData[i];
+
+                var list = document.getElementById("form");
+                var newRow = document.createElement("tr");
+
+                var cell1 = document.createElement("td");
+                cell1.textContent = i + 1;
+                newRow.appendChild(cell1);
+
+                var cell2 = document.createElement("td");
+                cell2.textContent = cur.name;
+                newRow.appendChild(cell2);
+
+                var cell3 = document.createElement("td");
+                cell3.textContent = cur.phonenumber;
+                newRow.appendChild(cell3);
+
+                var cell4 = document.createElement("td");
+                cell4.textContent = cur.lvl;
+                newRow.appendChild(cell4);
+
+                var cell5 = document.createElement("td");
+                cell5.textContent = cur.GPA;
+                newRow.appendChild(cell5);
+
+                var cell6 = document.createElement("td");
+                cell6.textContent = cur.depart;
+                newRow.appendChild(cell6);
+
+                var cell7 = document.createElement("td");
+                var status = document.createElement("p");
+                status.classList.add("status", "active");
+                status.textContent = "Active";
+                cell7.appendChild(status);
+                newRow.appendChild(cell7);
+
+                list.appendChild(newRow);
+            }
+            console.log("hello world") ;
+
+        },
+        error: function () {
+              alert("An Error Occurred");
+            },
+      });
+    });
+}
+</script>
 <script src="{%static 'java/table.js'%}"></script>
 </html>
 {%endblock%}
