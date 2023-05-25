@@ -20,7 +20,7 @@
     <div class="container">
       <div class="title">Edit student info</div>
       <div class="content">
-        <form action="editstudent" method="post"> {% csrf_token%}
+        <form action="editstudent" method="post" id="myform"> {% csrf_token%}
           <div class="user-details">
             <div class="input-box">
               <span class="details">ID</span>
@@ -60,12 +60,47 @@
         </form>
       </div>
     </div>
-    <script src="{%static 'java/editStudent.js'%}"></script>
   </body>
   </main>
   <footer>
     &copy; all rights are reserved to FCAI-CU
   </footer>
+  <script>
+    const submitbtn = document.querySelector("#edit");
+    const id = document.getElementById("id");
+    let flag = 0;
+  
+    submitbtn.addEventListener("click", function(event) {
+      flag = 1;
+      event.preventDefault();
+      $(document).ready(function() {
+        $.ajax({
+          type: "GET",
+          url: "{% url 'getstudents' %}",
+          success: function(response) {
+            for (var key in response.Data) {
+              if (id.value == response.Data[key].id) {
+                flag = 0;
+                break;
+              }
+            }
+            if (flag == 1) {
+              alert("User ID does not exist");
+            } else {
+              document.getElementById("myform").submit(); // Submit the form
+            }
+          },
+          error: function() {
+            alert("An Error Occurred");
+          }
+        });
+      });
+    });
+  </script>
+  
+  
 
+  
+  <script src="{%static 'java/editStudent.js'%}"></script>
 </html>
 {%endblock%}

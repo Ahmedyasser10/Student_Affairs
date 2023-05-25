@@ -106,5 +106,6 @@ def getprofiles(request):
 def getstudents (request):
     Data = students.objects.all()
     return JsonResponse({"Data": list(Data.values())})
+    
 
         

@@ -9,6 +9,7 @@ const button = document.getElementById("edit");
 const logOut = document.getElementById("logout");
 const logOut2 = document.getElementById("logout2");
 
+
 class Student {
     constructor(id, name, phone, email, address, level, gpa, type , depart) {
         this.id = id;
@@ -83,6 +84,8 @@ button.addEventListener('click', function (event) {
         return false;
     }
     
+    
+        
 
 
 });

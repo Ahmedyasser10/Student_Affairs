@@ -17,7 +17,7 @@
     <div class="title"> New depaartment</div>
 
     <div class="content">
-      <form action="NewDepartment" method="post">{% csrf_token%}
+      <form action="NewDepartment" method="post" id ="myform">{% csrf_token%}
         <div class="user-details">
           <div class="input-box">
             <span class="details">ID</span>
@@ -66,6 +66,38 @@
 
 
   </main>
+  <script>
+    const submitbtn = document.querySelector("#submit-btn");
+    const id = document.getElementById("id");
+    let flag = 0;
+  
+    submitbtn.addEventListener("click", function(event) {
+      flag = 1;
+      event.preventDefault();
+      $(document).ready(function() {
+        $.ajax({
+          type: "GET",
+          url: "{% url 'getstudents' %}",
+          success: function(response) {
+            for (var key in response.Data) {
+              if (id.value == response.Data[key].id) {
+                flag = 0;
+                break;
+              }
+            }
+            if (flag == 1) {
+              alert("User ID does not exist");
+            } else {
+              document.getElementById("myform").submit(); // Submit the form
+            }
+          },
+          error: function() {
+            alert("An Error Occurred");
+          }
+        });
+      });
+    });
+  </script>
   <script src="{%static 'java/newdepart.js'%}"></script>
 </body>
 </main>
