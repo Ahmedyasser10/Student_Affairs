@@ -67,6 +67,9 @@
 
   </main>
   <script>
+    const Fullname = document.getElementById("fullname");
+    const Level = document.getElementById("level");
+    const departmentSelect = document.querySelector('select');
     const submitbtn = document.querySelector("#submit-btn");
     const id = document.getElementById("id");
     let flag = 0;
@@ -80,14 +83,34 @@
           url: "{% url 'getstudents' %}",
           success: function(response) {
             for (var key in response.Data) {
-              if (id.value == response.Data[key].id) {
+              if (id.value == response.Data[key].student_id ) {
                 flag = 0;
                 break;
               }
             }
             if (flag == 1) {
-              alert("User ID does not exist");
+              alert("student data is not exist");
             } else {
+              let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
+              let idRegex = /^\d{8}$/;
+
+              if (!idRegex.test(id.value)) {
+                  alert("Invalid ID");
+                  return false;
+              }
+              if (!nameRegex.test(Fullname.value)) {
+                  alert("invalid Name");
+                  return false;
+              }
+              if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
+                  alert("this student can't be in a department");
+                  return false;
+
+              }
+              if ((Level.value > 2) && (departmentSelect.value === "General")) {
+                  alert("this student must have department");
+                  return false;
+              }
               document.getElementById("myform").submit(); // Submit the form
             }
           },
@@ -98,7 +121,7 @@
       });
     });
   </script>
-  <script src="{%static 'java/newdepart.js'%}"></script>
+  
 </body>
 </main>
 <footer>

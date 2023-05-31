@@ -1,4 +1,4 @@
-// // Get the form element
+// Get the form element
 const form = document.getElementById('user');
 
 // Get the input fields
@@ -16,11 +16,6 @@ const submitBtn = document.querySelector('#submit-btn');
 
 // Retrieve the form data from local storage and pre-populate the form fields
 
-
-
-
-
-
 class User {
   constructor(fullname, username, password, id, phonenumber, date, type) {
     this.username = username;
@@ -37,6 +32,7 @@ class User {
 let curUser = new User();
 
 window.onload = function () {
+  /*
   for (i = 0; i < localStorage.length; i++) {
     let k = localStorage.key(i);
     if (JSON.parse(localStorage.getItem(k)).type === 0)
@@ -53,6 +49,7 @@ window.onload = function () {
   username.value = curUser.username;
   password.value = curUser.password;
   phonenum.value = curUser.phonenumber;
+  */
 }
 
 // Add an event listener to the submit button
@@ -63,11 +60,6 @@ submitBtn.addEventListener('click', function (event) {
   let idRegex = /^\d{8}$/;
   let numRegex = /^(010|011|012|015)\d{8}$/;
 
-  if (username.value.trim() === '' || username.value.trim().length < 3 || !idRegex.test(username.value)) {
-    alert('Username should be more than 3 characters');
-    username.focus();
-    return false;
-  }
 
   // Check if the required fields are filled
   if (firstname.value.trim() === '' || !nameRegex.test(firstname.value.trim())) {
@@ -75,8 +67,6 @@ submitBtn.addEventListener('click', function (event) {
     firstname.focus();
     return false;
   }
-
-
 
   if (phonenum.value.trim() === '' || !numRegex.test(phonenum.value)) {
     alert('Please enter your phone number.');
@@ -89,7 +79,6 @@ submitBtn.addEventListener('click', function (event) {
     password.focus();
     return false;
   }
-
 
   let genderSelected = false;
 
@@ -105,6 +94,7 @@ submitBtn.addEventListener('click', function (event) {
     return false;
   }
 
+  /*
   let c = -1;
   for (i = 0; i < localStorage.length; i++) {
     let k = localStorage.key(i);
@@ -131,10 +121,11 @@ submitBtn.addEventListener('click', function (event) {
   window.location.replace(
     "user.html"
   );
+  */
 });
 
-
 logOut.onclick = function () {
+  /*
   for (i = 0; i < localStorage.length; i++) {
     let k = localStorage.key(i);
     if (JSON.parse(localStorage.getItem(k)).type === 0)
@@ -147,9 +138,11 @@ logOut.onclick = function () {
       break;
     }
   }
+  */
 }
 
 logOut2.onclick = function () {
+  /*
   for (i = 0; i < localStorage.length; i++) {
     let k = localStorage.key(i);
     if (JSON.parse(localStorage.getItem(k)).type === 0)
@@ -162,5 +155,6 @@ logOut2.onclick = function () {
       break;
     }
   }
+  */
 }
 

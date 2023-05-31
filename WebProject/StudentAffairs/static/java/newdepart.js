@@ -1,38 +1,38 @@
-const Fullname = document.getElementById("fullname");
-const ID = document.getElementById("id");
-const Level = document.getElementById("level");
-const departmentSelect = document.querySelector('select');
-const submitBtn = document.querySelector('#submit-btn');
-const logOut = document.getElementById("logout");
-const logOut2 = document.getElementById("logout2");
+// const Fullname = document.getElementById("fullname");
+// const ID = document.getElementById("id");
+// const Level = document.getElementById("level");
+// const departmentSelect = document.querySelector('select');
+// const submitBtn = document.querySelector('#submit-btn');
+// const logOut = document.getElementById("logout");
+// const logOut2 = document.getElementById("logout2");
 
-submitBtn.addEventListener('click', function (event) {
-    let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
-    let idRegex = /^\d{8}$/;
+// submitBtn.addEventListener('click', function (event) {
+//     let nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
+//     let idRegex = /^\d{8}$/;
 
-    if (!idRegex.test(ID.value)) {
-        alert("Invalid ID");
-        event.preventDefault();
-        return false;
-    }
-    if (!nameRegex.test(Fullname.value)) {
-        alert("invalid Name");
-        event.preventDefault();
-        return false;
-    }
-    if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
-        alert("this student can't be in a department");
-        event.preventDefault();
-        return false;
+//     if (!idRegex.test(ID.value)) {
+//         alert("Invalid ID");
+//         event.preventDefault();
+//         return false;
+//     }
+//     if (!nameRegex.test(Fullname.value)) {
+//         alert("invalid Name");
+//         event.preventDefault();
+//         return false;
+//     }
+//     if ((Level.value <= 2) && (departmentSelect.value !== "General")) {
+//         alert("this student can't be in a department");
+//         event.preventDefault();
+//         return false;
 
-    }
-    if ((Level.value > 2) && (departmentSelect.value === "General")) {
-        alert("this student must have department");
-        event.preventDefault();
-        return false;
-    }
+//     }
+//     if ((Level.value > 2) && (departmentSelect.value === "General")) {
+//         alert("this student must have department");
+//         event.preventDefault();
+//         return false;
+//     }
 
-});
+// });
 
 // logOut.onclick = function () {
 //     for (i = 0; i < localStorage.length; i++) {

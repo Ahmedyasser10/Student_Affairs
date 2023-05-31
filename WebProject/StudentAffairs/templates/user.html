@@ -1,76 +1,67 @@
-{% extends 'menu.html'%}
-{%block content%}
-{%load static%}
+{% extends 'menu.html' %}
+{% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>User info</title>s
-  <link rel="stylesheet" href="{%static 'css/edit.css'%}">
-
+  <title>User info</title>
+  <link rel="stylesheet" href="{% static 'css/edit.css' %}">
 </head>
-
 <body class="main">
-
- 
-
-  <body>
-    <div class="container">
-      <div class="title">User Info</div>
-      <div class="content">
-        <form action="user" id="user">
-          <div class="user-details">
-
-            <div class="input-box">
-              <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" id="username">
-            </div>
-            <div class="input-box">
-              <span class="details">Name</span>
-              <input type="text" placeholder="Enter your name" id="fname">
-            </div>
-            <div class="input-box">
-              <span class="details">Phone Number</span>
-              <input type="text" placeholder="Enter your number" id="phonenum">
-            </div>
-            <div class="input-box">
-              <span class="details">Password</span>
-              <input type="password" placeholder="Enter your password" id="password">
-            </div>
-
+  <div class="container">
+    <div class="title">User Info</div>
+    <div class="content">
+      <form action="user" id="user" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="form_type" value="update">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="Username" placeholder="Enter your username" id="username" value="{{ u.UserName }}" disabled>
           </div>
-          <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
-            <input type="radio" name="gender" id="dot-3">
-            <span class="gender-title">Gender</span>
-            <div class="category">
-              <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="gender">Male</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span class="gender">Female</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span class="gender">Prefer not to say</span>
-              </label>
-            </div>
+          <div class="input-box">
+            <span class="details">Name</span>
+            <input type="text" name="FullName" placeholder="Enter your name" id="fname" value="{{ u.FullName }}">
           </div>
-          <div class="button">
-            <input type="submit" value="update" id="submit-btn">
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="PhoneNumber" placeholder="Enter your number" id="phonenum" value="{{ u.PhoneNumber }}">
           </div>
-        </form>
-      </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="Password" placeholder="Enter your password" id="password" value="{{ u.Password }}">
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id = "dot-1" value="M" {% if u.gender == 'M' %}checked{% endif %} >
+          <input type="radio" name="gender" id = "dot-2" value="F" {% if u.gender == 'F' %}checked{% endif %} >
+          <input type="radio" name="gender"  id = "dot-3" value="N" {% if u.gender == 'N' %}checked{% endif %}>
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="update" id="submit-btn">
+        </div>
+      </form>
     </div>
-  </body>
-  </main>
-  <footer>
-    &copy; all rights are reserved to FCAI-CU
-  </footer>
-  <script src="{%static 'javauser.js'%}"> </script>
+  </div>
+  <script src="{%static 'java/user.js'%}"></script>
 
+</body>
 </html>
-{%endblock%}
+{% endblock %}
+
+

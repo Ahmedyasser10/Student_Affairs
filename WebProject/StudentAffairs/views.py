@@ -7,7 +7,7 @@ from django.http import JsonResponse
 from .models import Admin ,students
 import json
 from django.db.models import Q
-
+from django.shortcuts import redirect
 
 def Add(request):
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def delete(request):
 def edit(request):
     if request.method == "POST":
         IDs=request.POST['id']
-        updated_student=students.objects.get(id=IDs)
+        updated_student=students.objects.get(student_id=IDs)
         names=request.POST['name']
         updated_student.name=names
         phones=request.POST['number']
@@ -49,18 +49,6 @@ def edit(request):
         updated_student.save()
     return render(request,'editstudent.html',{})
 
-def login(request):
-    if request.method == 'POST':
-        ID = request.POST['id']
-        fname = request.POST['fullname']
-        uname = request.POST['Username']
-        Pass = request.POST['pass']
-        CPass = request.POST['cpass']
-        pnumber = request.POST['phone']
-        D = request.POST['date']
-        admin = Admin(NationalId = ID, FullName = fname , UserName = uname , Password = Pass, ConfirmPassword = CPass, PhoneNumber = pnumber, Date = D)
-        admin.save()
-    return render(request,'login.html',{})
 
 
 def nav(request):
@@ -72,18 +60,59 @@ def nav(request):
         admin.save()
     return render(request,'navpagev2.html',{})
 
+def login(request):
+    if request.method == 'POST':
+        ID = request.POST['id']
+        fname = request.POST['fullname']
+        username = request.POST['Username']
+        Pass = request.POST['pass']
+        CPass = request.POST['cpass']
+        pnumber = request.POST['phone']
+        D = request.POST['date']
+        admin = Admin(NationalId = ID, FullName = fname , UserName = username , Password = Pass, ConfirmPassword = CPass, PhoneNumber = pnumber, Date = D)
+        admin.save()
+       
+
+    return render(request,'login.html',{})
+
 
 
 def user(request):
-    template = loader.get_template('user.html')
-    return HttpResponse(template.render())
+    x = Admin.objects.get(logedIN=True)
+    context = {
+        'u': x,
+    }
 
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        if form_type == 'update':
+            name = request.POST.get('FullName')
+            phone = request.POST.get('PhoneNumber')
+            password = request.POST.get('Password')
+            gender = request.POST.get('gender')           
+            gender = request.POST.get('gender')
+
+            try:    
+                x.FullName = name
+                x.PhoneNumber = phone
+                x.Password = password
+                x.ConfirmPassword = password
+                x.gender = gender
+                x.save()
+            except Exception as e:
+                print("Error saving changes:", str(e))
+
+            # return redirect('home')
+
+    return render(request, 'user.html', context)
+   
+                                    
 
 def dep(request):
     if request.method == "POST":
         IDs=request.POST['id']
         
-        updated_student=students.objects.get(id=IDs)
+        updated_student=students.objects.get(student_id=IDs)
         names=request.POST['name']
         lvls=request.POST['lvl']
         departs=request.POST['depart']

@@ -23,7 +23,14 @@ class Admin(models.Model):
     ConfirmPassword = models.CharField(max_length=20)
     PhoneNumber = models.CharField(max_length=11)
     Date = models.DateField(default='2000-01-01')
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('N', 'Prefer not to say'),
+    )
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default='N')    
     logedIN = models.BooleanField(default=False, null=True)
 
     def __str__(self):
         return self.FullName
+
