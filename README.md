@@ -17,23 +17,3 @@ JavaScript
 Backend:
 
 Django
-Usage
-Admin Access:
-
-Visit /admin to access the admin panel.
-Use your admin credentials to log in.
-Student Access:
-
-Visit /signup to create a student account.
-Visit /login to log in as a student.
-Important Note:
-
-Ensure that you have administrator credentials to access and perform admin functions.
-Contributing
-Contributions are welcome! Please follow our Contribution Guidelines to get started.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-Thanks to the Django team for providing a robust web framework.
